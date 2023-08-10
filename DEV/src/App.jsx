@@ -5,11 +5,10 @@ import { NavBar } from './assets/componentes/NavBar'
 function App() {
 
   return (
-    <>
+    <div className='bg-[#EBECF0]'>
         <NavBar />
-        <div className="w-full bg-orange-500" ><h1>Hola cv</h1></div>
          
-    </>
+    </div>
   )
 }
 
