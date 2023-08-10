@@ -32,7 +32,7 @@ export const NavBar = () => {
 
       <div className="hidden md:flex md:justify-center  w-full">
         <div className="mt-4 mb-2 pt-1">
-          <img src="/src/assets/imagenes/Logo-dev.png" alt="Logo" className="w-[210px] hover:scale-105 cursor-pointer transition-all duration-300" />
+          <img src="/src/assets/imagenes/Logo-dev.png" alt="Logo" className="w-[210px] hover:scale-110 cursor-pointer transition-all duration-300" />
         </div>
       </div>
 
