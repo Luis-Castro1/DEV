@@ -9,7 +9,7 @@ export const Categorias = () => {
                     <h1 className="font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-3 sm:mb-3">{category.name}</h1>
 
                     <div className="flex justify-center  overflow-hidden">
-                        <img className="rounded-[15px] hover:scale-105 sm:hover:scale-110 transition-all duration-200 w-[90%] h-[440px] sm:w-[90%] sm:h-[480px] md:w-[95%] md:h-[490px]" src={category.image}
+                        <img className="rounded-[15px] hover:scale-105 sm:hover:scale-110 transition-all duration-200 w-[90%] h-[440px] sm:w-[90%] sm:h-[480px] md:w-[90%] md:h-[490px] max-w-[95%] max-h-[490px]" src={category.image}
                             width="50%" alt="" />
                     </div>
                 </a>
