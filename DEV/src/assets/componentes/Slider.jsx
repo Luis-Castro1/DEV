@@ -1,46 +1,74 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { faChevronLeft, faChevronRight, faCircle } from "@fortawesome/free-solid-svg-icons"
+import sliderimg from "../data/sliderimg"
+import React, { useState } from "react"
+
 
 export const Slider = () => {
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const prevSlide = () => {
+
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? sliderimg.length - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex)
+
+    }
+
+    const nextSlide = () => {
+        const isLastSlide = currentIndex === sliderimg.length - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex)
+    }
+
+    const goToSlide = (slideIndex) => {
+        setCurrentIndex(slideIndex);
+    };
+
+
+
+
     return (
+        <div className="max-w-[1400px] h-[500px] sm:h-[780px] w-full m-auto py-2 my-8 px-4 relative"> {/*Contenedor principal */}
 
-        
-        <div className="relative  bg-orange-800 "><h1 className="text-center bg-black text-white my-2">Tendencias</h1> {/*Contenedor Principal*/}
-        
-            <div className="flex flex-nowrap "> {/*Contenedor Slide*/}
-                <div className="min-w-full overflow-hidden ease-in-out duration-300 z-10  relative max-h-[500px]">  {/*Slide*/}
-                    <a  href="#">
-                    <img className="w-full align-top" src="src/assets/imagenes/Hombre.png" alt=""  />
-                    </a>
-                    <div className="relative bg-black sm:opacity-50 text-white w-full py-[10px] px-[60px] text-center sm:absolute bottom-0">
-                        <p>
-                            15% descuento en productos X
-                        </p>
-                    </div>
+            <h2 className="py-3 font-darker-grotesque text-[23px] font-light no-underline text-center text-black">Tendencias</h2>
+
+
+            <div style={{ backgroundImage: `url(${sliderimg[currentIndex].url})` }} className="w-full h-[88%] rounded-2xl bg-center bg-cover duration-300 group">
+
+                {/* Left controller */}
+
+                <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/30 text-white cursor-pointer">
+
+                    <FontAwesomeIcon onClick={prevSlide} className="text-[50px]" icon={faChevronLeft}> </FontAwesomeIcon>
+
                 </div>
-                <div className="min-w-full">  {/*Slide*/}
-                    <a href="#">
-                        <img className="w-full h-12" src="src/assets/imagenes/Hombre.png" alt=""  />
-                    </a>
-                    <div>
-                        <p>
-                            15% descuento en productos X
-                        </p>
-                    </div>
+
+                {/* Right controller */}
+
+                <div className="hidden group-hover:block  absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/30 text-white cursor-pointer">
+                    <FontAwesomeIcon onClick={nextSlide} className="text-[50px]" icon={faChevronRight}> </FontAwesomeIcon>
                 </div>
+
             </div>
 
-            {/* Controles */}
-            <div className="absolute top-0 z-20 w-full h-full pointer-events-none">
-                <button className="pointer-events-auto">
-                    <FontAwesomeIcon icon={faChevronRight} />
-                </button >
+            {/* Indicadores */}
 
-                <button className="pointer-events-auto bg-none border-none cursor-pointer outline-none w-[50px] h[50px] text-center absolute ease-in-out duration-300">
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
+            <div className="flex top-4 justify-center py-2">
+
+                {sliderimg.map((slide, slideIndex) => (
+                    <div
+                        key={slideIndex}
+                        onClick={() => goToSlide(slideIndex)}
+                        className='text-2xl mx-1 cursor-pointer'
+                    >
+                        <FontAwesomeIcon icon={faCircle} style={{ color: "#000000", }} />
+                    </div>
+                ))}
 
             </div>
+
         </div>
     )
 }
