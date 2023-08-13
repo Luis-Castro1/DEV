@@ -30,7 +30,7 @@ export const Slider = () => {
 
 
     return (
-        <div className="max-w-[1400px] h-[500px] sm:h-[780px] w-full m-auto py-2 my-8 px-4 relative"> {/*Contenedor principal */}
+        <div className="max-w-[1400px] h-[500px] sm:h-[780px] w-full m-auto py-2 my-8 px-5 relative"> {/*Contenedor principal */}
 
             <h2 className="py-3 font-darker-grotesque text-[23px] font-light no-underline text-center text-black">Tendencias</h2>
 
@@ -61,9 +61,9 @@ export const Slider = () => {
                     <div
                         key={slideIndex}
                         onClick={() => goToSlide(slideIndex)}
-                        className='text-2xl mx-1 cursor-pointer'
+                        className='text-[18px] sm:text-[15px] mx-1 cursor-pointer text-black/50'
                     >
-                        <FontAwesomeIcon icon={faCircle} style={{ color: "#000000", }} />
+                        <FontAwesomeIcon icon={faCircle} />
                     </div>
                 ))}
 
