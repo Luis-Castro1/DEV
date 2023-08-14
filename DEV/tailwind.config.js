@@ -17,7 +17,7 @@ export default {
       light: '350',
       normal: '400',
       medium: '500',
-      semibold: '600',
+      semibold: '650',
       bold: '700',
       extrabold: '800',
       'extra-bold': '800',
