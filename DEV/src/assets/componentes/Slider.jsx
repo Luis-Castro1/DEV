@@ -30,7 +30,7 @@ export const Slider = () => {
 
 
     return (
-        <div className="max-w-[1400px] h-[500px] sm:h-[780px] w-full m-auto py-2 my-8 px-5 relative"> {/*Contenedor principal */}
+        <div className="max-w-[1800px] h-[500px] sm:h-[700px] w-full m-auto py-2 my-8 px-5 relative"> {/*Contenedor principal */}
 
             <h2 className="py-3 font-darker-grotesque text-[23px] font-light no-underline text-center text-black">Tendencias</h2>
 

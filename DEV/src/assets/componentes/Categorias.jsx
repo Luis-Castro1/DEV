@@ -2,7 +2,7 @@ import categorias from "../data/categorias"
 
 export const Categorias = () => {
     return (
-        <div className="grid md:grid-cols-3  grid-cols-1 justify-between mt-9 pb-3 pt-5 text-white">
+        <div className="max-w-[1980px] grid md:grid-cols-3  grid-cols-1 justify-between mt-9 pb-3 pt-5 text-white">
 
             {categorias.map((category) => (
                 <a key={category.id} className="cursor-pointer" href="">
