@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight, faCircle } from "@fortawesome/free-solid-svg-icons"
 import sliderimg from "../data/sliderimg"
-import React, { useState } from "react"
+import  { useState } from "react"
 
 
 export const Slider = () => {
@@ -30,7 +30,7 @@ export const Slider = () => {
 
 
     return (
-        <div className="max-w-[1800px] h-[500px] sm:h-[700px] w-full m-auto py-2 my-8 px-5 relative"> {/*Contenedor principal */}
+        <div className="max-w-[1800px] h-[500px] sm:h-[700px] md:h-[900px] w-full m-auto py-2 my-8 px-5 relative"> {/*Contenedor principal */}
 
             <h2 className="py-3 font-darker-grotesque text-[23px] font-light no-underline text-center text-black">Tendencias</h2>
 

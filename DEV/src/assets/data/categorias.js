@@ -15,6 +15,7 @@ const categorias = [
         name: "NIÑO",
         image: "/src/assets/imagenes/Niño.png"
     },
+    
 
 ]
 export default categorias;

@@ -1,8 +1,9 @@
 import './App.css'
-import { Categorias } from './assets/componentes/Categorias'
+import { CategoryMan } from './assets/Pages/CategoryMan'
+import { Home } from './assets/Pages/Home'
+import { Login } from './assets/Pages/Login'
 import { NavBar } from './assets/componentes/NavBar'
-import { Slider } from './assets/componentes/Slider'
-import { Footer } from './assets/componentes/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
@@ -10,13 +11,21 @@ function App() {
 
 
   return (
-    <div className='bg-[#EBECF0]  box-border'>
-        <NavBar />
-        <Categorias />
-        <Slider />
-        <Footer />
-         
-    </div>
+    
+    <BrowserRouter>
+    <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Categoria-Hombre" element={<CategoryMan />} />
+        <Route path="/Categoria-Mujer" element={<h1>Mujer</h1>} />
+        <Route path="/Categoria-Niño" element={<h1>Niño</h1>} />
+      </Routes>
+
+   
+
+    </BrowserRouter>
+    
   )
 }
 

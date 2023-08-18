@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass, faUser, faHeart, faCartShopping }
   from "@fortawesome/free-solid-svg-icons"
+import { Link, NavLink } from "react-router-dom"
 
 const classLi = "list-none text-neutral-900 font-clear-sans font-hairline rounded-md px-1 py-1 text-md sm:text-[15px]"
 const linkHover = "hover:scale-125 cursor-pointer transtition-all duration-200"
@@ -12,7 +13,9 @@ export const NavBar = () => {
 
       <div className="flex justify-center md:hidden w-full py-2 my-1">
         <div className="mt-4 mb-2 pt-1">
-          <img src="/src/assets/imagenes/Logo-dev.png" alt="Logo" className="w-[210px] hover:scale-105 cursor-pointer transition-all duration-300" />
+          <Link to="/">
+             <img src="/src/assets/imagenes/Logo-dev.png" alt="Logo" className="w-[210px] hover:scale-105 cursor-pointer transition-all duration-300" />
+          </Link>
         </div>
       </div>
 
@@ -32,7 +35,9 @@ export const NavBar = () => {
 
       <div className="hidden md:flex md:justify-center  w-full">
         <div className="mt-4 mb-2 pt-1">
+          <Link to="/">
           <img src="/src/assets/imagenes/Logo-dev.png" alt="Logo" className="w-[210px] hover:scale-110 cursor-pointer transition-all duration-300" />
+          </Link>
         </div>
       </div>
 
@@ -40,25 +45,25 @@ export const NavBar = () => {
       <div className="grid grid-cols-3 justify-center items-start my-2 py-1">
 
         <div className='justify-center flex'>
-          <a className={linkHover} href="#">
+          <NavLink className={linkHover} to="/login">
             <li className={classLi}>Cuenta <FontAwesomeIcon icon={faUser} style={{ color: "black", }} />
             </li>
-          </a>
+          </NavLink>
         </div>
 
         <div className='justify-center flex'>
-          <a className={linkHover} href="#">
+          <NavLink className={linkHover} to="#">
             <li className={classLi}>Favoritos <FontAwesomeIcon icon={faHeart} style={{ color: "black", }} />
             </li>
-          </a>
+          </NavLink>
         </div>
 
         <div className='justify-center flex'>
-          <a className={linkHover} href="#">
+          <NavLink className={linkHover} to="#">
             <li className={classLi} >Carrito <FontAwesomeIcon icon={faCartShopping} style={{ color: "black", }} />
 
             </li>
-          </a>
+          </NavLink>
         </div>
 
 
