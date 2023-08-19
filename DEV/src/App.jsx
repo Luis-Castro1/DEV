@@ -18,7 +18,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Categoria-Hombre" element={<CategoryMan />} />
-        <Route path="/Categoria-Mujer" element={<h1>Mujer</h1>} />
+        <Route path="/Categoria-Mujer" element={<h1>Mujer</h1>} >
+          
+        </Route>
         <Route path="/Categoria-Niño" element={<h1>Niño</h1>} />
       </Routes>
 
