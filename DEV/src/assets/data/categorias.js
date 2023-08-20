@@ -15,13 +15,13 @@ const categorias = [
     {
         id: 3,
         name: "Camisas",
-        image: "/src/assets/imagenes/Niño.png",
+        image: "/src/assets/imagenes/camisa.png",
         path: "/camisas"
     },
     {
         id: 3,
         name: "Pantalones",
-        image: "/src/assets/imagenes/Niño.png",
+        image: "/src/assets/imagenes/pantalon.png",
         path: "/pantalones"
     }
     
