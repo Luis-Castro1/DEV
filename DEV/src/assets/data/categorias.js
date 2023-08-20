@@ -3,13 +3,13 @@ const categorias = [
     {
         id: 1,
         name: "Camisetas",
-        image: "/src/assets/imagenes/Hombre.png",
+        image: "/src/assets/imagenes/camisetas.png",
         path: "/camisetas"
     },
     {
         id: 2,
         name: "Shorts y bermudas",
-        image: "/src/assets/imagenes/Mujer.png",
+        image: "/src/assets/imagenes/bermuda.png",
         path: "/shorts"
     },
     {
