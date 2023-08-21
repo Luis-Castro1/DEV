@@ -37,7 +37,7 @@ export const CategoryMan = () => {
 
       </div>
 
-      <div className='max-w-[1980px] justify-between mx-3 flex flex-wrap'>
+      <div className='max-w-[1980px] justify-center sm:justify-between mx-3 flex flex-wrap'>
         <Recomendation />
       </div>
 

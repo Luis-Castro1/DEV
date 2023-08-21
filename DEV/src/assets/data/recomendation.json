@@ -1,17 +1,17 @@
 {
     "recomendation": [
         {
-            "img": "https://us.pand.co/cdn/shop/products/Espresso5_720x.png?v=1681472348",
+            "img": "/src/assets/imagenes/image5.png",
             "title": "Camiseta Look",
             "price": 70.000
         },
         {
-            "img": "https://raw.githubusercontent.com/laura0liv/ecommerce/master/public/image6.png?token=GHSAT0AAAAAACGBFBHU6U4RTCMKSIAY3F3QZHDBU5A",
+            "img": "/src/assets/imagenes/image6.png",
             "title": "Camiseta Beer",
             "price": 70.000
         },
         {
-            "img": "https://raw.githubusercontent.com/laura0liv/ecommerce/master/public/image7.png?token=GHSAT0AAAAAACGBFBHU26SNSGRFDNICNSK2ZHDBVHA",
+            "img": "/src/assets/imagenes/image7.png",
             "title": "Camiseta Scorpio",
             "price": 80.000
         },

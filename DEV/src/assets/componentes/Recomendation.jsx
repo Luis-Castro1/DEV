@@ -12,14 +12,14 @@ export const Recomendation = () => {
             {recomendation.map((p) => (
 
 
-                <div className="overflow-hidden rounded-[20px] cursor-pointer">
-                    <div className='flex justify-center overflow-hidden'>
+                <div className="relative overflow-hidden rounded-[20px] cursor-pointer font-darker-grotesque font-normal">
+                    <div className=' flex justify-center overflow-hidden'>
                         <img className=" w-[310px] h-[370px] mt-[15px] rounded-[20px] hover:scale-110 transition-all duration-500 " src={p.img} alt={p.title} />
                     </div>
 
-                    <div className="ml-[10px] mt-[10px]">
-                        <p>{p.title}</p>
-                        <p> ${p.price}</p>
+                    <div className="items-center text-white flex justify-between absolute inset-0 top-[21rem] h-[3rem] bg-black/80  px-[2px]  ">
+                        <p className='mx-2'>{p.title}</p>
+                        <p className='mx-2'> ${p.price}</p>
                     </div>
 
                 </div>
