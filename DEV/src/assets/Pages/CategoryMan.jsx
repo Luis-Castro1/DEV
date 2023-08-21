@@ -1,7 +1,8 @@
 import categorias from '../data/categorias'
 import CategoriasNav from '../componentes/CategoriasNav'
 import Footer from '../componentes/Footer'
-import { Link, Outlet, useParams} from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
+import { Recomendation } from '../componentes/Recomendation'
 
 export const CategoryMan = () => {
 
@@ -15,7 +16,7 @@ export const CategoryMan = () => {
         <h1 className='text-[18px] font-darker-grotesque ' >CATEGORIAS</h1>
       </div>
 
-      <div className="max-w-[1980px] justify-center flex flex-wrap text-white">
+      <div className="max-w-[1980px] justify-center flex flex-wrap text-white mb-10">
         {categorias.map((category) => (
           <Link key={category.id} to={`/Categoria-Hombre/${category.path}`} className="cursor-pointer">
 
@@ -33,14 +34,15 @@ export const CategoryMan = () => {
 
         ))}
 
-       
+
       </div>
-      
-     
-      
+
+      <div className='max-w-[1980px] justify-between mx-3 flex flex-wrap'>
+        <Recomendation />
+      </div>
 
       <Footer />
     </>
-    
+
   )
 }

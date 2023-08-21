@@ -1,6 +1,5 @@
 import React from 'react'
 import CategoriasNav from '../componentes/CategoriasNav'
-
 export const Products = ({ products }) => {
 
 
@@ -30,17 +29,11 @@ export const Products = ({ products }) => {
               </div>
             </div>
           </div>
-        )
-
-
-
-
-        )}
-
-
-
+        ))}
 
       </div>
+
+      
     </>
   )
 }

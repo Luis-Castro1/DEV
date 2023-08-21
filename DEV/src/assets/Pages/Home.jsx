@@ -6,7 +6,7 @@ import { Footer } from '../componentes/Footer'
 export const Home = () => {
     return (
         <div>
-            <div className="max-w-[1980px] grid md:grid-cols-3  grid-cols-1 justify-between mt-9 pb-3 pt-5 text-white">
+            <div className=" max-w-[1980px] grid md:grid-cols-3  grid-cols-1 justify-between mt-9 pb-3 pt-5 text-white">
                 <Categorias
                     to="/Categoria-Hombre"
                     title="HOMBRE"
