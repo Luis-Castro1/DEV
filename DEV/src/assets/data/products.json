@@ -1,0 +1,185 @@
+{"products":[
+    {
+        "id": 1,
+        "name": "Producto 1",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    
+    {
+        "id": 2,
+        "name": "Producto 2",
+        "category": "pantalones",
+        "img": "",
+        "price": 150000
+
+    },
+
+    {
+        "id": 3,
+        "name": "Producto 3",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 4,
+        "name": "Producto 4",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 5,
+        "name": "Producto 5",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 6,
+        "name": "Producto 6",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 7,
+        "name": "Producto 7",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 8,
+        "name": "Producto 8",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 9,
+        "name": "Producto 9",
+        "category": "shorts",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 10,
+        "name": "Producto 10",
+        "category": "shorts",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 11,
+        "name": "Producto 11",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 12,
+        "name": "Producto 12",
+        "category": "shorts",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 13,
+        "name": "Producto 13",
+        "category": "shorts",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 14,
+        "name": "Producto 14",
+        "category": "shorts",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 15,
+        "name": "Producto 15",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 16,
+        "name": "Producto 16",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 17,
+        "name": "Producto 17",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 18,
+        "name": "Producto 18",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 19,
+        "name": "Producto 19",
+        "category": "camisetas",
+        "img": "",
+        "price": 1500 
+
+    },
+
+    {
+        "id": 20,
+        "name": "Producto 20",
+        "category": "pantalones",
+        "img": "",
+        "price": 1500 
+
+    }
+
+
+]
+}
