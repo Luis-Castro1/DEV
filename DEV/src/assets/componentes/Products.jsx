@@ -14,7 +14,7 @@ export const Products = ({ products }) => {
 
       <div className='sm:grid flex flex-wrap  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-5'>
 
-        {products.map((product) => (
+        {products.slice(0,12).map((product) => (
 
           <div key={product.id} className='group max-w-[370px] mx-auto'>
             <div  className=" bg-white  shadow-sm shadow-slate-950 relative overflow-hidden rounded-[20px] cursor-pointer font-darker-grotesque font-normal py-[1px] mx-2 my-5 grid justify-center gap-y-1">
