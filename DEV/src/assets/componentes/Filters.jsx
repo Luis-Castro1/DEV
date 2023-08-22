@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useState, useId } from "react"
 
 
 export function Filters({onChange}) {
 
     const [minPrice, setMinPrice] = useState(0);
+    const minPriceFilterdId = useId();
 
     const handleChangeMinPrice = (e) =>{
 
@@ -20,10 +21,10 @@ export function Filters({onChange}) {
         <>
             <section>
                 <div className="flex gap-4 mx-8 items-center">
-                    <label htmlFor="price">Precio minimo</label>
+                    <label htmlFor={minPriceFilterdId}>Precio minimo</label>
                     <input
                         type="range"
-                        id="price"
+                        id={minPriceFilterdId}
                         min= '0'
                         max= '3000'
                         onChange={handleChangeMinPrice}

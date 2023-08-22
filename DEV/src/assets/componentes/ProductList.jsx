@@ -4,13 +4,10 @@ import { Products } from './Products'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
 
-export function ProductList() {
+function useFilters() {
 
     const { categoria } = useParams();
     console.log(categoria);
-
-
-    const [products] = useState(initialProducts)
 
     const [filters, setFilters] = useState({
 
@@ -30,14 +27,23 @@ export function ProductList() {
         })
     }
 
+    return { filterProducts, setFilters }
+}
+
+export function ProductList() {
+
+    const [products] = useState(initialProducts)
+
+    const {filterProducts, setFilters} = useFilters()
+
     const filteredProducts = filterProducts(products)
 
     return (
 
         <>
 
-            
-            <HeaderFilters changeFilters ={setFilters} />
+
+            <HeaderFilters changeFilters={setFilters} />
             <Products products={filteredProducts} />
 
         </>

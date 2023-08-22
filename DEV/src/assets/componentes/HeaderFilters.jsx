@@ -1,7 +1,7 @@
 import { Filters } from "./Filters"
 import CategoriasNav from './CategoriasNav';
 
-export function HeaderFilters(changeFilters) {
+export function HeaderFilters({changeFilters}) {
 
     return (
         <>

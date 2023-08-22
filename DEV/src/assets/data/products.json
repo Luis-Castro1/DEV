@@ -4,7 +4,7 @@
         "name": "Productoss 1",
         "category": "camisetas",
         "img": "/src/assets/imagenes/image5.png",
-        "price": 1500 
+        "price": 2500 
 
     },
 
@@ -14,7 +14,7 @@
         "name": "Producto 2",
         "category": "pantalones",
         "img": "/src/assets/imagenes/image6.png",
-        "price": 150000
+        "price": 1500
 
     },
 
@@ -23,7 +23,7 @@
         "name": "Producto 3",
         "category": "camisetas",
         "img": "/src/assets/imagenes/image6.png",
-        "price": 1500 
+        "price": 2500 
 
     },
 
@@ -41,7 +41,7 @@
         "name": "Producto 5",
         "category": "camisetas",
         "img": "https://us.pand.co/cdn/shop/products/Espresso5_720x.png?v=1681472348",
-        "price": 1500 
+        "price": 2000 
 
     },
 
@@ -50,7 +50,7 @@
         "name": "Producto 6",
         "category": "camisetas",
         "img": "",
-        "price": 1500 
+        "price": 2000 
 
     },
 
@@ -59,7 +59,7 @@
         "name": "Producto 7",
         "category": "camisetas",
         "img": "",
-        "price": 1500 
+        "price": 2000 
 
     },
 
