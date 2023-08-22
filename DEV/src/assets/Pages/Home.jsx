@@ -30,7 +30,10 @@ export const Home = () => {
 
             </div>
 
-            <Slider></Slider>
+            <div className='max-w-[1700px] mx-[40px] sm:mx-[20px] my-auto overflow-hidden'>
+                <Slider />
+            </div>
+
             <Footer />
         </div>
     )

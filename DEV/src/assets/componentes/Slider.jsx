@@ -8,61 +8,40 @@ import { Link } from 'react-router-dom'
 
 export const Slider = () => {
 
-    const styleBottom = "pointer-events-auto bg-none hover:bg-black/20 border-none cursor-pointer outline-none w-[60px]    h-[100%] text-center absolute ease-in-out duration-300"
-    
+    const containerP =  props => props.colorFondo ? props.colorFondo : 'rgba(0,0,0,.3)';
+
+    const styleBottom = "pointer-events-auto bg-none border-none cursor-pointer outline-none w-[50px] sm:w-[80px] h-full text-center absolute ease-in-out duration-300 hover:text-white hover:bg-black/20 "
+
 
 
     return (
-        <div className="Contenedor padre relative overflow-hidden max-w-[1480px] mx-[20px] my-auto">
+        <div className="bg-red-600 relative">
 
             <div className="container-slide flex flex-nowrap ">
 
-                <div className="slider md:relative min-w-full overflow-hidden ease-in-out duration-300 z-10 max-h-[800px]">
+                <div className="slider min-w-full overflow-hidden z-10 relative">
 
                     <Link to="/" >
-                        <img className="w-full align-top " src="src/assets/imagenes/Slider1.jpg" alt="" />
+                        <img className="w-full align-top" src="src/assets/imagenes/Slider1.jpg" alt="" />
                     </Link>
 
-                    <div className="relative bg-black md:absolute md:bottom-[4rem] min-[870px]:bottom-[4rem] lg:bottom-12 min-[1170px]:bottom-[1rem] md:bg-black/50 text-white w-full py-[10px] px-[60px] text-center">
+                    <div colorFondo='#EC7437' colorTexto='#EBECF0' className="relative md:absolut w-full py-[10px] px-[60px] bottom-0 text-center" style={{background: `${}`}}>
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
 
                 </div>
-                <div className="slider relative min-w-full overflow-hidden ease-in-out duration-300 z-10 max-h-[900px]">
-
-                    <Link to="/" >
-                        <img className="w-full align-top " src="src/assets/imagenes/Slider2.jpg" alt="" />
-                    </Link>
-
-                    <div className="bg-black/50 text-white w-full py-[10px] px-[60px] text-center">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quae officiis, at et deserunt aperiam?</p>
-                    </div>
-
-                </div>
-                <div className="slider relative min-w-full overflow-hidden ease-in-out duration-300 z-10 max-h-[900px]">
-
-                    <Link to="/" >
-                        <img className="w-full align-top " src="src/assets/imagenes/Slider3.jpg" alt="" />
-                    </Link>
-
-                    <div className="bg-black/50 text-white w-full py-[10px] px-[60px] text-center">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quae officiis, at et deserunt aperiam?</p>
-                    </div>
-
-                </div>
-
-
 
 
             </div>
 
-            <div className="Controles absolute top-0 z-20 w-full h-[100%] pointer-events-none overflow-hidden">
+            <div className="Controles absolute top-0 z-20 w-full  h-full  pointer-events-none">
 
-                <button  className={`${styleBottom} left-0 group`}>
-                    <FontAwesomeIcon className="text-[50px] left-0 group-hover:text-white" icon={Left}> </FontAwesomeIcon>
+                <button className={`${styleBottom} left-0 sm:left-1`}>
+                    <FontAwesomeIcon className="text-[40px] sm:text-[80px]" icon={Left}> </FontAwesomeIcon>
                 </button>
-                <button className={`${styleBottom} right-0`}>
-                    <FontAwesomeIcon className="text-[50px]" icon={Right}> </FontAwesomeIcon>
+
+                <button className={`${styleBottom} right-0 sm:right-1`}>
+                    <FontAwesomeIcon className="text-[40px] sm:text-[80px]" icon={Right}> </FontAwesomeIcon>
                 </button>
 
             </div>
