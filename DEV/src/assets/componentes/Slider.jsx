@@ -8,9 +8,8 @@ import { Link } from 'react-router-dom'
 
 export const Slider = () => {
 
-    const styleBottom = () =>{
-        name => 'Left' ? ""
-    }
+    const styleBottom = "pointer-events-all bg-white/50 border-none cursor-pointer outline-none w-[50px] h-full text-center absolute ease-in-out duration-300"
+    
 
 
     return (
@@ -59,10 +58,10 @@ export const Slider = () => {
 
             <div className="Controles absolute top-0 z-20 w-full h-full pointer-events-none">
 
-                <button name="Left" className="pointer-events-all bg-white/50 border-none cursor-pointer outline-none w-[50px] h-full text-center absolute ease-in-out duration-300">
+                <button  className={`${styleBottom} left-0`}>
                     <FontAwesomeIcon className="text-[50px] left-0" icon={Left}> </FontAwesomeIcon>
                 </button>
-                <button className="pointer-events-all bg-white/50 border-none cursor-pointer outline-none w-[50px] h-full text-center absolute ease-in-out duration-300 right-0">
+                <button className={`${styleBottom} right-0`}>
                     <FontAwesomeIcon className="text-[50px]" icon={Right}> </FontAwesomeIcon>
                 </button>
 
