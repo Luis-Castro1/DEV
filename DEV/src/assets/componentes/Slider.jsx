@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 export const Slider = () => {
 
-    const styleBottom = "pointer-events-all bg-white/50 border-none cursor-pointer outline-none w-[50px] h-full text-center absolute ease-in-out duration-300"
+    const styleBottom = "pointer-events-auto bg-none hover:bg-black/20 border-none cursor-pointer outline-none w-[60px]    h-[100%] text-center absolute ease-in-out duration-300"
     
 
 
@@ -56,10 +56,10 @@ export const Slider = () => {
 
             </div>
 
-            <div className="Controles absolute top-0 z-20 w-full h-full pointer-events-none">
+            <div className="Controles absolute top-0 z-20 w-full h-[100%] pointer-events-none overflow-hidden">
 
-                <button  className={`${styleBottom} left-0`}>
-                    <FontAwesomeIcon className="text-[50px] left-0" icon={Left}> </FontAwesomeIcon>
+                <button  className={`${styleBottom} left-0 group`}>
+                    <FontAwesomeIcon className="text-[50px] left-0 group-hover:text-white" icon={Left}> </FontAwesomeIcon>
                 </button>
                 <button className={`${styleBottom} right-0`}>
                     <FontAwesomeIcon className="text-[50px]" icon={Right}> </FontAwesomeIcon>
