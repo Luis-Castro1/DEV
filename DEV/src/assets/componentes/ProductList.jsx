@@ -1,11 +1,12 @@
 import { products as initialProducts } from '../data/products.json'
+import { HeaderFilters } from './HeaderFilters';
 import { Products } from './Products'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 export function ProductList() {
 
-    const {categoria} = useParams();
+    const { categoria } = useParams();
     console.log(categoria);
 
 
@@ -33,7 +34,14 @@ export function ProductList() {
 
     return (
 
-        <Products products={filteredProducts} />
+        <>
+
+            
+            <HeaderFilters changeFilters ={setFilters} />
+            <Products products={filteredProducts} />
+
+        </>
+
 
     )
 }
