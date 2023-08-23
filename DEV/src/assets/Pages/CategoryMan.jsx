@@ -29,15 +29,13 @@ export const CategoryMan = () => {
 
             <h1 className="hidden sm:block font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{category.name}</h1>
           </Link>
-
-
-
         ))}
 
-
       </div>
+      <hr className='h-[2px] bg-black mb-10' />
 
       <div className='max-w-[1980px] justify-center sm:justify-between mx-3 flex flex-wrap'>
+
         <Recomendation />
       </div>
 
