@@ -1,15 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft as Left, faChevronRight as Right, faCircle } from "@fortawesome/free-solid-svg-icons"
-import sliderimg from "../data/sliderimg"
-import { useState } from "react"
+import { sliderimg } from "../data/sliderimg.json"
 import { Link } from 'react-router-dom'
 import { useRef } from "react"
+import { useCallback } from "react"
 
 
 
-export const Slider = () => {
+export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
 
-    const nextSlide = () => {
+
+    const containerSlide = useRef(null);
+    const slideInterval = useRef(null);
+
+    const nextSlide = useCallback(() => {
 
         //Se comprueba que el Contenedor del Slider tenga elementos
         if (containerSlide.current.children.length > 0) {
@@ -18,11 +22,11 @@ export const Slider = () => {
             //Obtenemos el primer elemento del contenedor
             const firstSlide = containerSlide.current.children[0];
 
-            containerSlide.current.style.transition = `800ms ease-out all`;
+            containerSlide.current.style.transition = `${velocidad}ms ease-out all`;
 
             const slideSize = containerSlide.current.children[0].offsetWidth;
 
-            console.log(slideSize)
+
             containerSlide.current.style.transform = `translateX(-${slideSize}px)`;
 
             const transition = () => {
@@ -41,7 +45,8 @@ export const Slider = () => {
             containerSlide.current.addEventListener('transitionend', transition);
         }
 
-    }
+    }, [intervalo]);
+
     const prevSlide = () => {
 
         if (containerSlide.current.children.length > 0) {
@@ -58,7 +63,7 @@ export const Slider = () => {
             containerSlide.current.style.transform = `translateX(-${slideSize}px)`;
 
             setTimeout(() => {
-                containerSlide.current.style.transition = "800ms ease-out all";
+                containerSlide.current.style.transition = `${velocidad}ms ease-out all`;
                 containerSlide.current.style.transform = `translateX(0)`;
             }, 30);
 
@@ -68,46 +73,27 @@ export const Slider = () => {
 
     const styleBottom = "pointer-events-auto bg-none border-none cursor-pointer outline-none w-[50px] sm:w-[80px] h-full text-center absolute ease-in-out duration-300 group-hover:text-white group-hover:scale-110"
 
-    const containerSlide = useRef(null);
 
     return (
-        <div className="relative group  my-[2rem] ">
+        <div className="relative group  my-[2rem] rounded-[15px]">
 
-            <div className="text-center py-[1rem]">
+            <div className="text-center py-[1rem] ">
                 <h3 className='font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-3 sm:mb-3' >TENDENCIAS</h3>
             </div>
 
-            <div ref={containerSlide} className="flex flex-nowrap ">
+            <div ref={containerSlide} className="flex flex-nowrap rounded-[15px]">
 
+                {sliderimg.map((sliderimg) => (
 
-                <div className="slider min-w-full overflow-hidden z-10 relative bg-none ">
-                    <Link to="/" >
-                        <img className="w-full align-top" src="src\assets\imagenes\slider1.jpg" alt="" />
-                    </Link>
-                    <div className="bg-black/95 text-white relative md:absolut w-full py-[10px] px-[60px] bottom-0 text-center">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                    <div key={sliderimg.id} className="rounded-[15px] h-[30rem]  sm:h-auto min-w-full overflow-hidden z-10 relative bg-none ">
+                        <Link to="/" >
+                            <img className=" sm:w-full scale-x-[1.60] sm:scale-100 h-full sm:h-auto align-top" src={sliderimg.url} alt="" />
+                        </Link>
+                        <div className="bg-black/95 text-white relative md:absolut w-full py-[10px] px-[60px] bottom-[4rem] sm:bottom-0 text-center text-[14px] sm:text-base">
+                            <p>{sliderimg.p}</p>
+                        </div>
                     </div>
-                </div>
-
-                <div className="slider min-w-full overflow-hidden z-10 relative">
-                    <Link to="/" >
-                        <img className="w-full align-top" src="src\assets\imagenes\slider2.jpg" alt="" />
-                    </Link>
-                    <div className="bg-black/95 text-white relative md:absolut w-full py-[10px] px-[60px] bottom-0 text-center">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-
-                <div className="slider min-w-full overflow-hidden z-10 relative">
-                    <Link to="/" >
-                        <img className="w-full align-top" src="src\assets\imagenes\slider3.jpg" alt="" />
-                    </Link>
-                    <div className="bg-black/95 text-white relative md:absolut w-full py-[10px] px-[60px] bottom-0 text-center">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-
-
+                ))};
 
             </div>
 

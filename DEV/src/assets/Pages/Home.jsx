@@ -31,8 +31,8 @@ export const Home = () => {
             </div>
 
             <div className='max-w-[1700px] mx-[40px] sm:mx-[20px] my-auto overflow-hidden'>
-                
-                <Slider />
+
+                <Slider velocidad = '500' intervalo = '5000' />
             </div>
 
             <Footer />

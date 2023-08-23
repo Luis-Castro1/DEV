@@ -1,0 +1,19 @@
+{
+    "sliderimg": [
+        {
+            "id": 1,
+            "url": "/src/assets/imagenes/Slider1.jpg",
+            "p" : " Lorem ipsum dolor sit, amet consectetur adipisicing."
+        },
+        {
+            "id": 2,
+            "url": "/src/assets/imagenes/Slider2.jpg",
+            "p" : " Lorem ipsum dolor sit, amet consectetur."
+        },
+        {
+            "id": 3,
+            "url": "/src/assets/imagenes/Slider3.jpg",
+            "p" : " Lorem ipsum dolor sit, amet  adipisicing."
+        }
+    ]
+}
