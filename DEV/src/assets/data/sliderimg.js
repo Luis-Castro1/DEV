@@ -1,15 +1,18 @@
 const sliderimg= [
     {
         id: 1,
-        url:"DEV/src/assets/imagenes/Slider1.jpg"
+        url:"/src/assets/imagenes/Slider1.jpg",
+        class: "bg-black/80 text-white"
     },
     {
         id: 2,
-        url:"DEV/src/assets/imagenes/Slider2.jpg"
+        url:"/src/assets/imagenes/Slider2.jpg",
+        class: "bg-blue-700/30"
     },
     {
         id: 3,
-        url:"DEV/src/assets/imagenes/Slider3.jpg"
+        url:"/src/assets/imagenes/Slider3.jpg",
+        class: "bg-green-800/30"
     },
 ];
 
