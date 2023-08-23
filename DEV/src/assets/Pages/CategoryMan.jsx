@@ -1,10 +1,9 @@
-import categorias from '../data/categorias'
 import CategoriasNav from '../componentes/CategoriasNav'
 import Footer from '../componentes/Footer'
-import { Link, Outlet, useParams } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { Recomendation } from '../componentes/Recomendation'
 
-export const CategoryMan = () => {
+export const CategoryMan = ({ listProducts }) => {
 
 
   return (
@@ -17,17 +16,17 @@ export const CategoryMan = () => {
       </div>
 
       <div className="max-w-[1980px] justify-center flex flex-wrap text-white mb-10">
-        {categorias.map((category) => (
-          <Link key={category.id} to={`/Categoria-Hombre/${category.path}`} className="cursor-pointer">
+        {listProducts.map((listProducts) => (
+          <Link key={listProducts.id} to={`${listProducts.fatherPath}${listProducts.path}`} className="cursor-pointer">
 
-            <h1 className="sm:hidden my-5 font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{category.name}</h1>
+            <h3 className="sm:hidden my-5 font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listProducts.name}</h3>
 
             <div className="flex justify-center overflow-hidden ">
-              <img className=" ms-0  hover:scale-105 sm:hover:scale-125 transition-all duration-500 rounded-[15px] w-[330px] h-[330px] sm:rounded-none sm:w-[330px] sm:h-[330px]  max-w-[100%] max-h-[490px]" src={category.image}
-                alt={category.alt} />
+              <img className=" ms-0  hover:scale-105 sm:hover:scale-125 transition-all duration-500 rounded-[15px] w-[330px] h-[330px] sm:rounded-none sm:w-[330px] sm:h-[330px]  max-w-[100%] max-h-[490px]" src={listProducts.image}
+                alt={listProducts.alt} />
             </div>
 
-            <h1 className="hidden sm:block font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{category.name}</h1>
+            <h3 className="hidden sm:block font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listProducts.name}</h3>
           </Link>
         ))}
 
@@ -35,7 +34,6 @@ export const CategoryMan = () => {
       <hr className='h-[2px] bg-black mb-10' />
 
       <div className='max-w-[1980px] justify-center sm:justify-between mx-3 flex flex-wrap'>
-
         <Recomendation />
       </div>
 
