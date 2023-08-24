@@ -91,7 +91,7 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
                             <img className="align-top h-full w-full object-cover " src={sliderimg.url} alt="" />
                         </Link>
 
-                        <div className=" h-1/6 md:h-[5%] bg-black/95 text-white relative sm:absolute 
+                        <div className=" h-1/6 md:h-[5%]  text-white relative sm:absolute 
                         w-full py-[10px] px-[60px] bottom-[4rem] sm:bottom-0 text-center text-[14px] sm:text-base">
 
                             <p>{sliderimg.p}</p>
