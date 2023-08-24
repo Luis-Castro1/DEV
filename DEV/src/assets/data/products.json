@@ -1,7 +1,7 @@
 {"products":[
     {
         "id": 1,
-        "name": "Productoss 1",
+        "name": "Camiseta x",
         "category": "camisetas",
         "img": "/src/assets/imagenes/image5.png",
         "price": 2500 
@@ -11,7 +11,7 @@
     
     {
         "id": 2,
-        "name": "Producto 2",
+        "name": "Pantalones y",
         "category": "pantalones",
         "img": "/src/assets/imagenes/image6.png",
         "price": 1500
@@ -74,7 +74,7 @@
 
     {
         "id": 9,
-        "name": "Producto 9",
+        "name": "Shorts 9",
         "category": "shorts",
         "img": "",
         "price": 1500 

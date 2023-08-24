@@ -1,7 +1,9 @@
 import CategoriasNav from '../componentes/CategoriasNav'
 import Footer from '../componentes/Footer'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Recomendation } from '../componentes/Recomendation'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 
 export const Categorys = ({ listProducts }) => {
 
@@ -29,8 +31,19 @@ export const Categorys = ({ listProducts }) => {
             <h3 className="hidden sm:block font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listProducts.name}</h3>
           </Link>
         ))}
-
       </div>
+
+      <div className=' mx-[1rem]  my-[2rem] text-center 
+                      lg:text-left text-[18px] font-darker-grotesque font-light flex'>
+        <Link to={"all"}>
+            <button className='border border-black rounded-[10px] bg-white hover:bg-white/25 hover:scale-105'>
+              <p className='text-black mx-2'>Ver todos los productos
+                <FontAwesomeIcon className='mx-2' icon={faAnglesRight} />
+              </p>
+            </button>
+        </Link>
+      </div>
+
       <hr className='h-[2px] bg-black mb-10' />
 
       <div className='max-w-[1980px] justify-center sm:justify-between mx-3 flex flex-wrap'>
