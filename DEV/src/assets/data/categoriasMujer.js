@@ -39,7 +39,34 @@ const categorias = [
         fatherPath: "/Categoria-Mujer/",
         path: "vestidos",
         alt: "Categoria Vestidos"
+    },
+    {
+        id: 6,
+        name: "x",
+        image: "",
+        fatherPath: "/Categoria-Mujer/",
+        path: "vestidos",
+        alt: "Categoria Vestidos"
+    },
+    {
+        id: 7,
+        name: "x",
+        image: "",
+        fatherPath: "/Categoria-Mujer/",
+        path: "vestidos",
+        alt: "Categoria Vestidos"
+    },
+    {
+        id: 8,
+        name: "x",
+        image: "",
+        fatherPath: "/Categoria-Mujer/",
+        path: "vestidos",
+        alt: "Categoria Vestidos"
     }
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 import './App.css'
-import { CategoryMan } from './assets/Pages/CategoryMan'
+import { Categorys } from './assets/Pages/Categorys'
 import { Home } from './assets/Pages/Home'
 import { Login } from './assets/Pages/Login'
 import { NavBar } from './assets/componentes/NavBar'
@@ -24,13 +24,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
 
-        <Route path="/Categoria-Hombre/" element={<CategoryMan listProducts={categorias} />} />
+        <Route path="/Categoria-Hombre/" element={<Categorys listProducts={categorias} />} />
         <Route path="/Categoria-Hombre/:categoria" element={<ProductList />} />
 
-        <Route path="/Categoria-Mujer" element={<CategoryMan listProducts={categoriasMujer} />} />
+        <Route path="/Categoria-Mujer" element={<Categorys listProducts={categoriasMujer} />} />
         <Route path="/Categoria-Mujer/:categoria" element={<ProductList />} />
 
-        <Route path="/Categoria-Niño" element={<CategoryMan listProducts={categoriasNiño} />} />
+        <Route path="/Categoria-Niño" element={<Categorys listProducts={categoriasNiño} />} />
         <Route path="/Categoria-Niño/:categoria" element={<ProductList />} />
 
        

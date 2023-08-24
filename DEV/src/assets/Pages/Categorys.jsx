@@ -3,7 +3,7 @@ import Footer from '../componentes/Footer'
 import { Link} from 'react-router-dom'
 import { Recomendation } from '../componentes/Recomendation'
 
-export const CategoryMan = ({ listProducts }) => {
+export const Categorys = ({ listProducts }) => {
 
 
   return (
@@ -11,11 +11,11 @@ export const CategoryMan = ({ listProducts }) => {
 
       <CategoriasNav />
 
-      <div className='flex justify-center items-center py-[10px]'>
+      <div className='flex justify-center items-center py-[10px] mt-4'>
         <h1 className='text-[18px] font-darker-grotesque ' >CATEGORIAS</h1>
       </div>
 
-      <div className="max-w-[1980px] justify-center flex flex-wrap text-white mb-10">
+      <div className="max-w-[1980px] justify-center flex flex-wrap text-white mb-10  gap-y-[1rem]">
         {listProducts.map((listProducts) => (
           <Link key={listProducts.id} to={`${listProducts.fatherPath}${listProducts.path}`} className="cursor-pointer">
 
