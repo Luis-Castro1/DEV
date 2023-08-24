@@ -75,23 +75,28 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
 
 
     return (
-        <div className="relative group  my-[2rem] rounded-[15px]">
+        <div className="relative group  mt-[2rem] rounded-[15px]">
 
             <div className="text-center py-[1rem] ">
                 <h3 className='font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-3 sm:mb-3' >TENDENCIAS</h3>
             </div>
 
-            <div ref={containerSlide} className="flex flex-nowrap rounded-[15px]">
+            <div ref={containerSlide} className="flex flex-nowrap rounded-[15px] h-[360px] md:h-[800px]">
 
                 {sliderimg.map((sliderimg) => (
 
-                    <div key={sliderimg.id} className="rounded-[15px] h-[30rem]  sm:h-auto min-w-full overflow-hidden z-10 relative bg-none ">
-                        <Link to="/" >
-                            <img className=" sm:w-full scale-x-[1.60] sm:scale-100 h-full sm:h-auto align-top" src={sliderimg.url} alt="" />
+                    <div key={sliderimg.id} className="rounded-[15px] h-full  min-w-full overflow-hidden z-10 relative">
+
+                        <Link to="/" className="w-full h-5/6 md:h-11/12" >
+                            <img className="align-top h-full w-full object-cover " src={sliderimg.url} alt="" />
                         </Link>
-                        <div className="bg-black/95 text-white relative md:absolut w-full py-[10px] px-[60px] bottom-[4rem] sm:bottom-0 text-center text-[14px] sm:text-base">
+
+                        <div className=" h-1/6 md:h-[5%] bg-black/95 text-white relative sm:absolute 
+                        w-full py-[10px] px-[60px] bottom-[4rem] sm:bottom-0 text-center text-[14px] sm:text-base">
+
                             <p>{sliderimg.p}</p>
                         </div>
+
                     </div>
                 ))};
 

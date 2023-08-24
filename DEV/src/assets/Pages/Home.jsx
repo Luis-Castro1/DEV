@@ -6,7 +6,7 @@ import { Footer } from '../componentes/Footer'
 export const Home = () => {
     return (
         <div>
-            <div className=" max-w-[1980px] grid md:grid-cols-3  grid-cols-1 justify-between mt-9 pb-3 pt-5 text-white">
+            <div className=" max-w-[1780px] grid lg:grid-cols-3  grid-cols-1 justify-center mt-9 pb-3 pt-5 mx-auto text-white">
                 <Categorias
                     to="/Categoria-Hombre"
                     title="HOMBRE"
@@ -30,7 +30,7 @@ export const Home = () => {
 
             </div>
 
-            <div className='max-w-[1700px] mx-[40px] sm:mx-[20px] my-auto overflow-hidden'>
+            <div className='max-w-[1780px] mx-[40px] sm:mx-auto  max-h-[1050px] overflow-hidden'>
 
                 <Slider velocidad = '500' intervalo = '5000' />
             </div>

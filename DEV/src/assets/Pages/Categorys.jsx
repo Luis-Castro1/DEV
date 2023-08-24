@@ -36,17 +36,17 @@ export const Categorys = ({ listProducts }) => {
       <div className=' mx-[1rem]  my-[2rem] text-center 
                       lg:text-left text-[18px] font-darker-grotesque font-light flex'>
         <Link to={"all"}>
-            <button className='border border-black rounded-[10px] bg-white hover:bg-white/25 hover:scale-105'>
-              <p className='text-black mx-2'>Ver todos los productos
-                <FontAwesomeIcon className='mx-2' icon={faAnglesRight} />
-              </p>
-            </button>
+          <button className='border border-black rounded-[10px] bg-white hover:bg-white/25 hover:scale-105'>
+            <p className='text-black mx-2'>Ver todos los productos
+              <FontAwesomeIcon className='mx-2' icon={faAnglesRight} />
+            </p>
+          </button>
         </Link>
       </div>
 
       <hr className='h-[2px] bg-black mb-10' />
 
-      <div className='max-w-[1980px] justify-center sm:justify-between mx-3 flex flex-wrap'>
+      <div className='max-w-[1980px] justify-center sm:justify-between mx-10 flex flex-wrap'>
         <Recomendation />
       </div>
 
