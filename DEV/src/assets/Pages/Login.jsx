@@ -4,28 +4,22 @@ import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons'
 export const Login = () => {
 
 
-  
+
   return (
-    <div className='flex flex-col justify-center items-center'>
-  <div className='h-96 w-96 bg-white rounded-2xl'>
-  <img src="src/assets/imagenes/Logo-dev.png" alt="" className='"w-90 h-12 block mx-auto -my-6' />
-<h1 className='text-center pb-20 font-Darker-Grotesque text-1.5rem text-black mt-11'>ACCEDE A TU CUENTA </h1>
 
-<div className='E-MAIL'>
-  <div className='relative border-b-1.5 border-black '>
-  <FontAwesomeIcon className='absolute left-negative-20 leading-30' icon={faEnvelope} />
-<input className='mb-10 w-full px-5 h-25 text-14 border-none bg-none outline-none' type="text" />
-  </div>
-</div>
+    <div className='flex justify-center items-center h-screen'>
+      <div className='h-[400px] w-[400px] bg-white rounded-2xl relative'>
+        <img src="src/assets/imagenes/Logo-dev.png" alt="" className="w-45 h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <form className='h-full flex flex-col pt-6 items-center'>
+            <h1 className=" mt-9 text-[1.5rem] font-darker-grotesque text-black bg">ACCEDE A TU CUENTA </h1>
+       
+          <input type="text" />
+        </form>
+      </div>
 
-<div className='PASSWORD'>
-<FontAwesomeIcon icon={faKey} />
-<input type="password" />
-</div>
-  </div>
 
-     </div>
-    
+    </div>
+
 
   )
 }

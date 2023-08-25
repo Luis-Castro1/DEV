@@ -6,8 +6,8 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'clear-sans': ['clear-sans?styles=20834'],
-      'darker-grotesque': ['Darker+Grotesque:wght@300&display=swap']
+      'clear-sans': 'clear-sans',
+      'darker-grotesque': 'Darker Grotesque'
     }
     ,
     fontWeight: {
