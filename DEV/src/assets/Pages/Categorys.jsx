@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 import { Recomendation } from '../componentes/Recomendation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
+import { NavBar } from '../componentes/NavBar'
 
 export const Categorys = ({ listProducts }) => {
 
 
   return (
     <>
-
+      <NavBar />
       <CategoriasNav />
 
       <div className='flex justify-center items-center py-[10px] mt-4'>

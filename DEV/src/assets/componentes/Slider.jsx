@@ -71,7 +71,7 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
 
     }
 
-    const styleBottom = "pointer-events-auto bg-none border-none cursor-pointer outline-none w-[50px] sm:w-[80px] h-full text-center absolute ease-in-out duration-300 group-hover:text-white group-hover:scale-110"
+    const styleBottom = "pointer-events-auto bg-none border-none cursor-pointer outline-none w-[50px] sm:w-[80px] h-[100%] text-center absolute ease-in-out duration-300 group-hover:text-white group-hover:scale-110"
 
 
     return (
@@ -81,14 +81,19 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
                 <h3 className='font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-3 sm:mb-3' >TENDENCIAS</h3>
             </div>
 
-            <div ref={containerSlide} className="flex flex-nowrap rounded-[15px] h-[360px] md:h-[800px]">
+            <div ref={containerSlide} className="flex flex-nowrap rounded-[15px] h-[360px] md:h-[800px] ">
 
                 {sliderimg.map((sliderimg) => (
 
                     <div key={sliderimg.id} className="rounded-[15px] h-full  min-w-full overflow-hidden z-10 relative">
 
-                        <Link to="/" className="w-full h-5/6 md:h-11/12" >
-                            <img className="align-top h-full w-full object-cover " src={sliderimg.url} alt="" />
+                        <Link to="/login" className="w-full h-5/6 md:h-11/12 pointer-events-none" >
+                            <img className="align-top h-full w-full object-cover relative " src={sliderimg.url} alt="" />
+
+                            <button className="absolute z-40 bg-blue-600 text-white text-[19px]
+                            top-[80%] left-1/2 transform -translate-x-1/2 sm:-translate-y-[80%] -translate-y-[100%]
+                            pointer-events-auto h-8 sm:h-[50px] w-[150px]  border-2 border-black rounded-[5px] ">Read more</button>
+
                         </Link>
 
                         <div className=" h-1/6 md:h-[5%] bg-black/95 text-white relative sm:absolute 
@@ -102,7 +107,7 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
 
             </div>
 
-            <div className="Controles absolute top-0 z-20 w-full  h-full  pointer-events-none">
+            <div className="Controles absolute top-[6rem] z-20 w-full  h-[85%]  pointer-events-none">
 
                 <button onClick={prevSlide} className={`${styleBottom} left-0 sm:left-1`}>
                     <FontAwesomeIcon className="text-[40px] sm:text-[60px]" icon={Left}> </FontAwesomeIcon>
