@@ -11,18 +11,18 @@ const categorias = [
     {
         id: 2,
         name: "Shorts y bermudas",
-        image: "/src/assets/imagenes/short.jpg",
+        image: "/src/assets/imagenes/shorts.jpg",
         fatherPath: "/Categoria-Mujer/",
         path: "shorts",
         alt: "Categoria Shorts"
     },
     {
         id: 3,
-        name: "Camisas",
-        image: "/src/assets/imagenes/camisaMujer.jpg",
+        name: "Blusas",
+        image: "/src/assets/imagenes/blusas.png",
         fatherPath: "/Categoria-Mujer/",
-        path: "camisas",
-        alt: "Categoria Camisas"
+        path: "blusas",
+        alt: "Categoria blusas"
     },
     {
         id: 4,
@@ -35,36 +35,12 @@ const categorias = [
     {
         id: 5,
         name: "Vestidos",
-        image: "/src/assets/imagenes/vestidos.jpg",
+        image: "/src/assets/imagenes/vestidos.png",
         fatherPath: "/Categoria-Mujer/",
         path: "vestidos",
         alt: "Categoria Vestidos"
     },
-    {
-        id: 6,
-        name: "x",
-        image: "",
-        fatherPath: "/Categoria-Mujer/",
-        path: "vestidos",
-        alt: "Categoria Vestidos"
-    },
-    {
-        id: 7,
-        name: "x",
-        image: "",
-        fatherPath: "/Categoria-Mujer/",
-        path: "vestidos",
-        alt: "Categoria Vestidos"
-    },
-    {
-        id: 8,
-        name: "x",
-        image: "",
-        fatherPath: "/Categoria-Mujer/",
-        path: "vestidos",
-        alt: "Categoria Vestidos"
-    }
-
+   
 
 
 

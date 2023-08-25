@@ -3,7 +3,7 @@ const categorias = [
     {
         id: 1,
         name: "Camisetas",
-        image: "/src/assets/imagenes/camisetas.png",
+        image: "/src/assets/imagenes/camisetaHombre.png",
         path: "camisetas",
         fatherPath: "/Categoria-Hombre/",
         alt: "Categoria Camisetas"
@@ -27,10 +27,20 @@ const categorias = [
     {
         id: 4,
         name: "Pantalones",
-        image: "/src/assets/imagenes/pantalon.png",
+        image: "/src/assets/imagenes/pantalonesHombre.png",
         path: "pantalones",
         fatherPath: "/Categoria-Hombre/",
         alt: "Categoria Pantalones"
+    },
+    {
+        id: 5,
+        name: "Hoodies",
+        image: "/src/assets/imagenes/hoodies.jpg",
+        path: "hoodies",
+        fatherPath: "/Categoria-Hombre/",
+        alt: "Categoria Hoodies"
+
+
     }
 
 

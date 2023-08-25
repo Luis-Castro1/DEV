@@ -11,7 +11,7 @@ export const Products = ({ products }) => {
   return (
     <>
 
-      <NavBar />
+  
 
 
       <div className='sm:grid flex flex-wrap  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-5'>

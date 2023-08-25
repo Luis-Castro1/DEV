@@ -3,35 +3,45 @@ const categorias = [
     {
         id: 1,
         name: "Camisetas",
-        image: "/src/assets/imagenes/camisetasMujer.jpg",
+        image: "/src/assets/imagenes/camisetaNiño.png",
         fatherPath: "/Categoria-Niño/",
         path: "camisetas",
         alt: "Categoria Camisetas"
     },
     {
         id: 2,
-        name: "Shorts y bermudas",
-        image: "/src/assets/imagenes/short.jpg",
+        name: "Bermudas",
+        image: "/src/assets/imagenes/bermudaNiño.jpg",
         fatherPath: "/Categoria-Niño/",
-        path: "shorts",
-        alt: "Categoria Shorts"
+        path: "bermudas",
+        alt: "Categoria Berm"
     },
     {
         id: 3,
-        name: "Camisas",
-        image: "/src/assets/imagenes/camisaNiño.jpg",
+        name: "Hoodies",
+        image: "/src/assets/imagenes/hoodieNiño.png",
         fatherPath: "/Categoria-Niño/",
-        path: "camisas",
-        alt: "Categoria Camisas"
+        path: "hoodies",
+        alt: "Categoria Hoodies"
     },
     {
         id: 4,
         name: "Pantalones",
-        image: "/src/assets/imagenes/pantalonMujer.jpg",
+        image: "/src/assets/imagenes/pantalonNiño.png",
         fatherPath: "/Categoria-Niño/",
         path: "pantalones",
         alt: "Categoria Pantalones"
     },
+    {
+        id: 5,
+        name: "Camisas",
+        image: "/src/assets/imagenes/camisaNiño.jpg",
+        fatherPath: "/Categoria-Niño/",
+        path: "pantalones",
+        alt: "Categoria Camisas"
+    },
+
+    
 
 
 
