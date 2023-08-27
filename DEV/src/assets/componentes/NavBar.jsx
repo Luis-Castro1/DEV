@@ -20,8 +20,6 @@ export const NavBar = () => {
       </div>
 
 
-
-
       <div className=" flex justify-center md:block px-3 w-full">
         <div className="flex ml-2 py-1 my-2 items-center relative">
           <FontAwesomeIcon className="absolute pt-[10px] pr-0 pb-[10px] sm:ml-0 ml-[10px] sm:pl-[13px] z-[100] text-[20px]" icon={faMagnifyingGlass} style={{ color: "#0F172A", }} />

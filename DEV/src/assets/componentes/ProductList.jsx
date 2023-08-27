@@ -35,11 +35,8 @@ function useFilters(setGender) {
 
 export function ProductList({gender}) {
     
-    const genero = gender
-    console.log(genero)
-
-    
-      const setGender = (genero)
+    const setGender = gender
+    console.log(setGender)
     
 
     const [products] = useState(initialProducts)
