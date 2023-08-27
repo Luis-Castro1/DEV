@@ -4,13 +4,14 @@ import { Products } from './Products'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom';
 
-function useFilters() {
+function useFilters(setGender) {
+    const genero = setGender
 
     const { categoria } = useParams();
     console.log(categoria);
 
     const [filters, setFilters] = useState({
-
+        genero: genero,
         category: categoria,
         minPrice: 0
     });
@@ -18,7 +19,7 @@ function useFilters() {
     const filterProducts = (products) => {
         return products.filter(product => {
             return (
-                product.price >= filters.minPrice &&
+                product.price >= filters.minPrice && product.gender === filters.genero &&
                 (
                     filters.category === 'all' ||
                     product.category === filters.category
@@ -26,15 +27,24 @@ function useFilters() {
             )
         })
     }
-
+    console.log(filters)
     return { filterProducts, setFilters }
+   
+    
 }
 
-export function ProductList() {
+export function ProductList({gender}) {
+    
+    const genero = gender
+    console.log(genero)
+
+    
+      const setGender = (genero)
+    
 
     const [products] = useState(initialProducts)
 
-    const {filterProducts, setFilters} = useFilters()
+    const {filterProducts, setFilters} = useFilters(setGender)
 
     const filteredProducts = filterProducts(products)
 

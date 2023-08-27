@@ -25,13 +25,13 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/Categoria-Hombre/" element={<Categorys listProducts={categorias} />} />
-        <Route path="/Categoria-Hombre/:categoria" element={<ProductList />} />
+        <Route path="/Categoria-Hombre/:categoria" element={<ProductList gender='Hombre' />} />
 
         <Route path="/Categoria-Mujer" element={<Categorys listProducts={categoriasMujer} />} />
-        <Route path="/Categoria-Mujer/:categoria" element={<ProductList />} />
+        <Route path="/Categoria-Mujer/:categoria" element={<ProductList gender='Mujer' />} />
 
         <Route path="/Categoria-Niño" element={<Categorys listProducts={categoriasNiño} />} />
-        <Route path="/Categoria-Niño/:categoria" element={<ProductList />} />
+        <Route path="/Categoria-Niño/:categoria" element={<ProductList gender='Niño' />} />
 
        
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { NavBar } from './NavBar'
+import Footer from './Footer'
 
 
 export const Products = ({ products }) => {
@@ -10,8 +11,6 @@ export const Products = ({ products }) => {
 
   return (
     <>
-
-  
 
 
       <div className='sm:grid flex flex-wrap  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-5'>
@@ -42,7 +41,8 @@ export const Products = ({ products }) => {
         ))}
 
       </div>
-
+      <hr className='h-[2px] bg-black mt-10' />
+          <Footer />
 
     </>
   )
