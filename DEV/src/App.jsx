@@ -1,13 +1,13 @@
 import './App.css'
-import { Categorys } from './assets/Pages/Categorys'
-import { Home } from './assets/Pages/Home'
-import { Login } from './assets/Pages/Login'
-import { NavBar } from './assets/componentes/NavBar'
+import { Categorys } from './Pages/Categorys'
+import { Home } from './Pages/Home'
+import { Login } from './Pages/Login'
+import { NavBar } from './componentes/NavBar'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { ProductList } from './assets/componentes/ProductList'
-import categorias from './assets/data/categorias'
-import categoriasMujer from './assets/data/categoriasMujer'
-import categoriasNiño from './assets/data/categoriasNiño'
+import { ProductList } from './componentes/ProductList'
+import categorias from './data/categorias'
+import categoriasMujer from './data/categoriasMujer'
+import categoriasNiño from './data/categoriasNiño'
 
 
 

@@ -12,21 +12,21 @@ export const Home = () => {
                 <Categorias
                     to="/Categoria-Hombre"
                     title="HOMBRE"
-                    image="/src/assets/imagenes/Hombre.png"
+                    image="/src/assets/imagenes/Generos/Hombre.png"
                     alt="Categoría Hombre"
                 ></Categorias>
 
                 <Categorias
                     to="/Categoria-Mujer"
                     title="MUJER"
-                    image="/src/assets/imagenes/Mujer.png"
+                    image="/src/assets/imagenes/Generos/Mujer.png"
                     alt="Categoría Mujer"
                 ></Categorias>
 
                 <Categorias
                     to="/Categoria-Niño"
                     title="NIÑO"
-                    image="/src/assets/imagenes/Niño.png"
+                    image="/src/assets/imagenes/Generos/Niño.png"
                     alt="Categoría Niño"
                 ></Categorias>
 

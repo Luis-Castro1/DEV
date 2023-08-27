@@ -3,7 +3,7 @@ const categorias = [
     {
         id: 1,
         name: "Camisetas",
-        image: "/src/assets/imagenes/camisetaNiño.png",
+        image: "/src/assets/imagenes/categorias/camisetaNiño.png",
         fatherPath: "/Categoria-Niño/",
         path: "camisetas",
         alt: "Categoria Camisetas"
@@ -11,7 +11,7 @@ const categorias = [
     {
         id: 2,
         name: "Bermudas",
-        image: "/src/assets/imagenes/bermudaNiño.jpg",
+        image: "/src/assets/imagenes/categorias/bermudaNiño.jpg",
         fatherPath: "/Categoria-Niño/",
         path: "bermudas",
         alt: "Categoria Berm"
@@ -19,7 +19,7 @@ const categorias = [
     {
         id: 3,
         name: "Hoodies",
-        image: "/src/assets/imagenes/hoodieNiño.png",
+        image: "/src/assets/imagenes/categorias/hoodieNiño.png",
         fatherPath: "/Categoria-Niño/",
         path: "hoodies",
         alt: "Categoria Hoodies"
@@ -27,7 +27,7 @@ const categorias = [
     {
         id: 4,
         name: "Pantalones",
-        image: "/src/assets/imagenes/pantalonNiño.png",
+        image: "/src/assets/imagenes/categorias/pantalonNiño.png",
         fatherPath: "/Categoria-Niño/",
         path: "pantalones",
         alt: "Categoria Pantalones"
@@ -35,7 +35,7 @@ const categorias = [
     {
         id: 5,
         name: "Camisas",
-        image: "/src/assets/imagenes/camisaNiño.jpg",
+        image: "/src/assets/imagenes/categorias/camisaNiño.jpg",
         fatherPath: "/Categoria-Niño/",
         path: "pantalones",
         alt: "Categoria Camisas"
