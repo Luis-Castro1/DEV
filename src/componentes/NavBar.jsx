@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass, faUser, faHeart, faCartShopping }
   from "@fortawesome/free-solid-svg-icons"
 import { Link, NavLink } from "react-router-dom"
+import { Cart } from "./Cart"
 
 const classLi = "list-none text-neutral-900 font-clear-sans font-hairline rounded-md px-1 py-1 text-md sm:text-[15px]"
 const linkHover = "hover:scale-125 cursor-pointer transtition-all duration-200"
@@ -57,11 +58,10 @@ export const NavBar = () => {
         </div>
 
         <div className='justify-center flex'>
-          <NavLink className={linkHover} to="#">
-            <li className={classLi} >Carrito <FontAwesomeIcon icon={faCartShopping} style={{ color: "black", }} />
+          <li className={classLi} >
+            <Cart />
 
-            </li>
-          </NavLink>
+          </li>
         </div>
 
 

@@ -8,6 +8,7 @@ import { ProductList } from './componentes/ProductList'
 import categorias from './data/categorias'
 import categoriasMujer from './data/categoriasMujer'
 import categoriasNiño from './data/categoriasNiño'
+import { Cart } from './componentes/Cart'
 
 
 
@@ -19,7 +20,6 @@ function App() {
   return (
 
     <BrowserRouter>
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -33,7 +33,7 @@ function App() {
         <Route path="/Categoria-Niño" element={<Categorys listProducts={categoriasNiño} />} />
         <Route path="/Categoria-Niño/:categoria" element={<ProductList gender='Niño' />} />
 
-       
+
 
       </Routes >
 
