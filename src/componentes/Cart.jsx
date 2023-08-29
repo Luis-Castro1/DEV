@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useId } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faXmark } from '@fortawesome/free-solid-svg-icons';
-import './cart.css'
 import { useCart } from '../hooks/useCart'
+import './cart.css'
 
 function CartItem({ img, price, name, quantity, addToCart, restQuantity }) {
 
@@ -52,7 +52,7 @@ export function Cart() {
             </label>
             <button className='' id={cartCheckBoxId} type="button" onClick={toggleCartVisible} />
             <aside className={`cart overflow-y-auto border border-black bg-[#F1F6F9] px-2 py-4 fixed right-0 top-0 w-[300px] rounded-lg 
-            ${cartVisible ? 'block h-full' : 'hidden'} z-[100]`}>
+            ${cartVisible ? 'cart-visible' : 'cart-hidden'} z-[100]`}>
                 <div className='w-full justify-end h-8 flex items-center mb-5'>
                     <button className='exit bg-black/5 h-8 w-20 rounded-full' onClick={toggleCartVisible}>
                         <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon>

@@ -1,5 +1,20 @@
-.cart-button ~ input:checked ~ .cart {
-  height: 100%;
-  display: block;
+/* Cuando el carrito está visible */
+.cart-visible {
+    display: block;
+    transform: translateX(0); /* Muestra el carrito en su posición normal */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+    height: 100%;
 }
+
+/* Cuando el carrito está oculto */
+.cart-hidden {
+    display: block; /* Asegura que el carrito esté visible incluso durante la transición */
+    transform: translateX(100%); /* Empuja el carrito fuera de la pantalla */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+    height: 100%;
+}
+
+
+
+
 

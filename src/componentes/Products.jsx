@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus, faCartArrowDown } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
 import { useCart } from '../hooks/useCart'
+import { Link } from 'react-router-dom'
 
 
 export const Products = ({ products }) => {
@@ -24,7 +25,9 @@ export const Products = ({ products }) => {
 
           return (
 
-            <div key={product.id} className='group max-w-[370px] mx-auto'>
+            <Link key={product.id} to={`product-${product.id}`} >
+            
+            <div className='group max-w-[370px] mx-auto'>
               <div className=" bg-white  shadow-sm shadow-slate-950 relative overflow-hidden rounded-[20px] cursor-pointer font-darker-grotesque font-normal py-[1px] mx-2 my-5 grid justify-center gap-y-1">
 
                 <div className="flex justify-center overflow-hidden bg-white">
@@ -58,6 +61,7 @@ export const Products = ({ products }) => {
                 </div>
               </div>
             </div>
+            </Link>
           )
         })}
 

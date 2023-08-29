@@ -9,6 +9,7 @@ import categorias from './data/categorias'
 import categoriasMujer from './data/categoriasMujer'
 import categoriasNiño from './data/categoriasNiño'
 import { Cart } from './componentes/Cart'
+import { ProductView } from './componentes/ProductView'
 
 
 
@@ -26,6 +27,7 @@ function App() {
 
         <Route path="/Categoria-Hombre/" element={<Categorys listProducts={categorias} />} />
         <Route path="/Categoria-Hombre/:categoria" element={<ProductList gender='Hombre' />} />
+        <Route path="/Categoria-Hombre/:categoria/:product" element={<ProductView />} />
 
         <Route path="/Categoria-Mujer" element={<Categorys listProducts={categoriasMujer} />} />
         <Route path="/Categoria-Mujer/:categoria" element={<ProductList gender='Mujer' />} />
