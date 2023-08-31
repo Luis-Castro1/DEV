@@ -1,17 +1,17 @@
-import './login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
   useEffect(() => {
     const emailInput = document.getElementById('email_input');
     const passwordInput = document.getElementById('pass_input');
-  
+
     const handleInput = event => {
       const input = event.target;
       const label = input.nextElementSibling;
-      
+
       if (input.value) {
         input.classList.add('border-gray-400', 'border-b-2');
         label.classList.add('-top-6');
@@ -28,7 +28,7 @@ export const Login = () => {
       emailInput.removeEventListener('input', handleInput);
       passwordInput.removeEventListener('input', handleInput);
     };
-  }, []); 
+  }, []);
 
   return (
     <div className='flex justify-center items-center h-screen'>
@@ -39,9 +39,9 @@ export const Login = () => {
           <h1 className=" mt-9 text-[1.5rem] font-darker-grotesque text-black bg">ACCEDE A TU CUENTA</h1>
 
           <div className=' mt-20 relative font-sans left-[-10px]'>
-            <FontAwesomeIcon icon={faUser} className='absolute left-[-20px] leading-[30px]'/>
-            <input type="text" id="email_input" className='w-[300px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer'/>
-          <label htmlFor="email" id='email_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-300  pointer-events-none peer-focus:-top-6'>E-MAIL</label>
+            <FontAwesomeIcon icon={faUser} className='absolute left-[-20px] leading-[30px]' />
+            <input type="text" id="email_input" className='w-[300px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer' />
+            <label htmlFor="email" id='email_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-300  pointer-events-none peer-focus:-top-6'>E-MAIL</label>
           </div>
 
           <div className='mt-10 relative font-sans left-[-10px]'>
@@ -52,7 +52,11 @@ export const Login = () => {
 
           <div className='flex items-center flex-col pt-10 font-darker-grotesque  '>
             <input type="button" value="INICIAR SESION" className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm ' />
-            <input type="button" value="REGISTRATE" className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm'/>
+            <Link to='/registro' className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm text-center'>
+              <button className='' type="button" >REGISTRATE
+              </button>
+
+            </Link>
           </div>
 
           <div className='relative left-[-55px] font-sans'>

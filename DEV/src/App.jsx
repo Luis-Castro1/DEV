@@ -8,6 +8,7 @@ import { ProductList } from './assets/componentes/ProductList'
 import categorias from './assets/data/categorias'
 import categoriasMujer from './assets/data/categoriasMujer'
 import categoriasNiño from './assets/data/categoriasNiño'
+import { Registro } from './assets/Pages/Registro'
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
 
         <Route path="/Categoria-Hombre/" element={<Categorys listProducts={categorias} />} />
         <Route path="/Categoria-Hombre/:categoria" element={<ProductList />} />
