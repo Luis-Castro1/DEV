@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus, faCartArrowDown } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
 import { useCart } from '../hooks/useCart'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from "react";
+import { ProductPreviewContext } from "../context/ProductPreviewContext";
+
+
 
 
 export const Products = ({ products }) => {
@@ -13,6 +17,14 @@ export const Products = ({ products }) => {
   const checkProductInCart = product => {
     return cart.some(item => item.id === product.id)
   }
+
+  const { openProductPreview } = useContext(ProductPreviewContext);
+  const history = useNavigate();
+
+  const handleClick = (product) => {
+    openProductPreview(product);
+    history(`product-#${product.id}`); // Navegar a la vista previa del producto con el ID en la URL
+  };
 
   return (
     <>
@@ -25,30 +37,33 @@ export const Products = ({ products }) => {
 
           return (
 
-            <Link key={product.id} to={`product-${product.id}`} >
-            
-            <div className='group max-w-[370px] mx-auto'>
+            <div key={product.id} className='group max-w-[370px] mx-auto'>
               <div className=" bg-white  shadow-sm shadow-slate-950 relative overflow-hidden rounded-[20px] cursor-pointer font-darker-grotesque font-normal py-[1px] mx-2 my-5 grid justify-center gap-y-1">
 
-                <div className="flex justify-center overflow-hidden bg-white">
-                  <img className='w-[370px] h-[370px]   hover:scale-125 transition-all duration-300 ' src={product.img} alt="" />
-                </div>
 
-                <div className="items-center text-white flex justify-between absolute inset-0 top-[325px] h-[3rem] bg-black/80  px-[2px] ">
-                  <strong>{product.name}</strong>
+                <button onClick={() => handleClick(product)}>
+                  <div className="flex justify-center overflow-hidden bg-white">
+                    <img className='w-[370px] h-[370px]   hover:scale-125 transition-all duration-300 ' src={product.img} alt="" />
+                  </div>
+
+                  <div className="items-center text-white flex justify-between absolute inset-0 top-[325px] h-[3rem] bg-black/80  px-[2px] ">
+                    <strong>{product.name}</strong>
+
+                    <h3>{`$${product.price}`}</h3>
+                  </div>
+                </button>
 
 
-                  <h3>{`$${product.price}`}</h3>
-                </div>
+
 
                 <div className='hidden group-hover:flex  group-hover:justify-center'>
                   <button className="w-full bg-white rounded-[2px]"
-                  style={{background: isProductInCart ? 'red' : 'blue'}}
-                   onClick={() => {
-                    isProductInCart
-                      ? removeFromCart(product)
-                      : addToCart(product)
-                  }}
+                    style={{ background: isProductInCart ? 'red' : 'blue' }}
+                    onClick={() => {
+                      isProductInCart
+                        ? removeFromCart(product)
+                        : addToCart(product)
+                    }}
                   >
                     {
 
@@ -61,7 +76,7 @@ export const Products = ({ products }) => {
                 </div>
               </div>
             </div>
-            </Link>
+
           )
         })}
 
