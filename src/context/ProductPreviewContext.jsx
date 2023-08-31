@@ -8,7 +8,6 @@ export function ProductPreviewProvider({ children }) {
 
   const openProductPreview = (product) => {
     setProductPreview(product);
-    console.log("si")
   };
 
   const closeProductPreview = () => {
