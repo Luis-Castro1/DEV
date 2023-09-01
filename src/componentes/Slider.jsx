@@ -78,7 +78,7 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
         <div className="relative group  mt-[2rem] rounded-[15px]">
 
             <div className="text-center py-[1rem] ">
-                <h3 className='font-darker-grotesque text-[23px] font-light no-underline text-center text-black mb-1 sm:mt-3 sm:mb-3' >TENDENCIAS</h3>
+                <h3 className='font-darker-grotesque text-[23px] font-semibold no-underline text-center text-black mb-1 sm:mt-3 sm:mb-3' >TENDENCIAS</h3>
             </div>
 
             <div ref={containerSlide} className="flex flex-nowrap rounded-[15px]  h-[460px] md:h-[800px] ">

@@ -27,7 +27,7 @@ export const CategoriasNav = () => {
   return (
     <nav>
       <div className="flex mt-[20px] py-[1px] font-darker-grotesque
-                       text-[17px] gap-7 justify-center bg-black text-white">
+                       text-[15px] font-semibold md:text-[17px] gap-7 justify-center bg-black text-white">
 
         {categoryLinks.map((item) => (
 

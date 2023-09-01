@@ -38,7 +38,7 @@ export const Products = ({ products }) => {
           return (
 
             <div key={product.id} className='group max-w-[370px] mx-auto'>
-              <div className=" bg-white  shadow-sm shadow-slate-950 relative overflow-hidden rounded-[20px] cursor-pointer font-darker-grotesque font-normal py-[1px] mx-2 my-5 grid justify-center gap-y-1">
+              <div className=" bg-white  shadow-sm shadow-slate-950 relative overflow-hidden rounded-[20px] cursor-pointer font-darker-grotesque font-medium py-[1px] mx-2 my-5 grid justify-center gap-y-1">
 
 
                 <button onClick={() => handleClick(product)}>

@@ -1,6 +1,5 @@
-// import { AddCart } from "./AddCart";
 // import { Favorites } from "./Favorites";
-// import { Size } from "./Size";
+import { Size } from "./Size";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useRef } from "react";
 import { ProductPreviewContext } from "../context/ProductPreviewContext";
@@ -16,10 +15,11 @@ import { useState } from "react";
 export const ProductView = ({ data }) => {
     const { id } = useParams();
     const { productPreview, closeProductPreview } = useContext(ProductPreviewContext);
-
+    
     // Aquí puedes usar el ID de la URL para obtener el producto correspondiente desde el contexto
     const product = productPreview; // Aquí debes obtener el producto según su ID
-
+    console.log(product)
+    
     if (!product) {
         return null;
     }
@@ -47,7 +47,7 @@ export const ProductView = ({ data }) => {
             <button onClick={handleGoBackAndClose}>Cerrar</button>
             <div className="product-preview ">
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-x-0 md:mx-20">
-                    <div className="space-y-2 hidden overflow-hidden md:flex md:flex-col  bg-red-400">
+                    <div className="space-y-2 hidden overflow-hidden md:flex md:flex-col ">
 
                         <div className="grid grid-cols-2 gap-x-2 w-full">
                             <img className="object-cover ease-in-out duration-300  transform hover:scale-105 w-full h-full" src={product.img} alt="Camiseta sunday" />
@@ -78,22 +78,29 @@ export const ProductView = ({ data }) => {
 
 
 
-                    <div className=" font-darker-grotesque text-black text-2xl font-light"  >
-                        <div className=" sm:ml-20 bg-orange-600 min-w-full">
-                            <h1 className="font-bold text-4xl  mt-[20px] mb-[10px] ">{product.name}</h1>
-                            <p className="mt-[15px] font-semibold">{product.price}</p>
-                            <p className="mt-[5px]" >Color: hueso</p>
+                    <div className="ml-10  sm:mx-2 font-darker-grotesque  text-2xl"  >
+                        <div className="  sm:ml-20 min-w-full">
+                            <h1 className="font-[1000] text-4xl  mt-[20px] mb-[10px] ">{product.name}</h1>
+                            <p className="mt-[15px] font-semibold text-black/70">${product.price}</p>
+                            <div className="bg-black/60 my-2 h-[1.2px] w-[70%] text-black/70"></div>
+                            <p className="mt-[5px]  font-bold" >Color: hueso</p>
                         </div>
 
-                        <div className="sm:ml-20 text-justify my-3 w-[70%] ">
-                            <p className="">Camiseta estampada cuello redondo para hombre de ajuste holgado,jersey suave de algodón 100 % </p>
+                        <div className="sm:ml-20 text-justify my-3 w-[90%] sm:w-[70%] text-black/80 font-semibold ">
+                            <p className="text-[25px]">Camiseta estampada cuello redondo para hombre de ajuste holgado,jersey suave de algodón 100 % </p>
                         </div>
-                        {/* <Size/> */}
+
+                        <div className="sm:ml-20 sm:w-[70%] flex justify-center">
+
+                            <Size />
+                        </div>
+
+                        {/* <div className="sm:ml-20 sm:w-[70%] flex justify-center my-[80px]">
+                            <AddCart />
+                        </div> */}
+
                     </div >
-                    <div className="flex justify-center gap-x-[1rem] lg:mx-5  items-center py-5 my-5 lg:justify-normal">
-                        {/* <AddCart/>
-                            <Favorites/> */}
-                    </div>
+
 
 
                 </div>
