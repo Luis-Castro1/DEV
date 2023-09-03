@@ -12,32 +12,40 @@ import { useState } from "react";
 
 
 
-export const ProductView = ({ data }) => {
-    const { id } = useParams();
+export const ProductView = () => {
+
     const { productPreview, closeProductPreview } = useContext(ProductPreviewContext);
-    
+
     // Aquí puedes usar el ID de la URL para obtener el producto correspondiente desde el contexto
     const product = productPreview; // Aquí debes obtener el producto según su ID
-    console.log(product)
-    
-    if (!product) {
-        return null;
-    }
+
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!productPreview) {
+            closeProductPreview(); // Cierra la vista previa del producto
+            navigate(-1); // Regresa a la página anterior
+        }
+    }, [productPreview, closeProductPreview, navigate]);
 
     const handleGoBackAndClose = () => {
         closeProductPreview(); // Cierra la vista previa del producto
-        navigate(-1); // Regresa a la página anterior
+        navigate(0); // Regresa a la página anterior
     };
 
-    const imgSlide = [product.img, product.img, product.img, product.img];
+    const imgSlide = [
+        { id: 1, img: productPreview ? product.img : "" },
+        { id: 2, img: productPreview ? product.img : "" },
+        { id: 3, img: productPreview ? product.img : "" },
+        { id: 4, img: productPreview ? product.img : "" },
+    ];
+
     const [width, setWidth] = useState(0);
     const carousel = useRef();
 
     useEffect(() => {
         setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }, []);
-
 
 
     return (
@@ -50,13 +58,13 @@ export const ProductView = ({ data }) => {
                     <div className="space-y-2 hidden overflow-hidden md:flex md:flex-col ">
 
                         <div className="grid grid-cols-2 gap-x-2 w-full">
-                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 w-full h-full" src={product.img} alt="Camiseta sunday" />
-                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 h-full " src={product.img} alt="Camiseta sunday" />
+                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 w-full h-full" src={productPreview ? product.img : ""} alt="Camiseta sunday" />
+                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 h-full " src={productPreview ? product.img : ""} alt="Camiseta sunday" />
                         </div>
 
                         <div className="grid grid-cols-2 gap-x-2  w-full">
-                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={product.img} alt="Camiseta sunday" />
-                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={product.img} alt="Camiseta sunday" />
+                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={productPreview ? product.img : ""} alt="Camiseta sunday" />
+                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={productPreview ? product.img : ""} alt="Camiseta sunday" />
                         </div>
 
                     </div>
@@ -67,21 +75,18 @@ export const ProductView = ({ data }) => {
                             dragConstraints={{ right: 0, left: -width }}>
                             {imgSlide.map(image => {
                                 return (
-                                    <motion.div key={image} className="item min-h-[40rem] min-w-[30rem] py-10 px-[2px] sm:px-5 ">
-                                        <img className=" w-full h-full rounded-[20px] pointer-events-none" src={image} alt="" />
+                                    <motion.div key={image.id} className="item min-h-[40rem] min-w-[30rem] py-10 px-[2px] sm:px-5 ">
+                                        <img className=" w-full h-full rounded-[20px] pointer-events-none" src={image.img} alt="" />
                                     </motion.div>
                                 )
                             })}
                         </motion.div>
                     </motion.div>
 
-
-
-
                     <div className="ml-10  sm:mx-2 font-darker-grotesque  text-2xl"  >
                         <div className="  sm:ml-20 min-w-full">
-                            <h1 className="font-[1000] text-4xl  mt-[20px] mb-[10px] ">{product.name}</h1>
-                            <p className="mt-[15px] font-semibold text-black/70">${product.price}</p>
+                            <h1 className="font-[1000] text-4xl  mt-[20px] mb-[10px] ">{productPreview ? product.name : ""}</h1>
+                            <p className="mt-[15px] font-semibold text-black/70">${productPreview ? product.price : ""}</p>
                             <div className="bg-black/60 my-2 h-[1.2px] w-[70%] text-black/70"></div>
                             <p className="mt-[5px]  font-bold" >Color: hueso</p>
                         </div>
@@ -118,11 +123,6 @@ export const ProductView = ({ data }) => {
 
 
         </>
-
-
-
-
-
     )
 }
 export default ProductView

@@ -5,7 +5,7 @@ export const ProductPreviewContext = createContext();
 
 export function ProductPreviewProvider({ children }) {
   const [productPreview, setProductPreview] = useState(null);
-
+  
   const openProductPreview = (product) => {
     setProductPreview(product);
   };

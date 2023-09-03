@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus, faCartArrowDown } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
 import { useCart } from '../hooks/useCart'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useContext } from "react";
 import { ProductPreviewContext } from "../context/ProductPreviewContext";
 
@@ -23,7 +23,7 @@ export const Products = ({ products }) => {
 
   const handleClick = (product) => {
     openProductPreview(product);
-    history(`product-#${product.id}`); // Navegar a la vista previa del producto con el ID en la URL
+    history(`${product.id}`); // Navegar a la vista previa del producto con el ID en la URL
   };
 
   return (

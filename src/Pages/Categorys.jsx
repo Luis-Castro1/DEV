@@ -1,12 +1,12 @@
 import CategoriasNav from '../componentes/CategoriasNav'
 import Footer from '../componentes/Footer'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Recomendation } from '../componentes/Recomendation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 import { NavBar } from '../componentes/NavBar'
 
-export const Categorys = ({ listProducts}) => {
+export const Categorys = ({ listCategorys}) => {
 
   return (
     <>
@@ -18,17 +18,17 @@ export const Categorys = ({ listProducts}) => {
       </div>
 
       <div className="max-w-[1980px] justify-center flex flex-wrap text-white mb-10  gap-y-[1rem]">
-        {listProducts.map((listProducts) => (
-          <Link key={listProducts.id} to={`${listProducts.fatherPath}${listProducts.path}`} className="cursor-pointer">
+        {listCategorys.map((listCategorys) => (
+          <Link key={listCategorys.id} to={`${listCategorys.fatherPath}${listCategorys.path}`} className="cursor-pointer">
 
-            <h3 className="sm:hidden my-5 font-darker-grotesque text-[23px] font-semibold no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listProducts.name}</h3>
+            <h3 className="sm:hidden my-5 font-darker-grotesque text-[23px] font-semibold no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listCategorys.name}</h3>
 
             <div className="flex justify-center overflow-hidden ">
-              <img className=" ms-0  hover:scale-105 sm:hover:scale-125 transition-all duration-500 rounded-[15px] w-[330px] h-[330px] sm:rounded-none sm:w-[330px] sm:h-[330px]  max-w-[100%] max-h-[490px]" src={listProducts.image}
-                alt={listProducts.alt} />
+              <img className=" ms-0  hover:scale-105 sm:hover:scale-125 transition-all duration-500 rounded-[15px] w-[330px] h-[330px] sm:rounded-none sm:w-[330px] sm:h-[330px]  max-w-[100%] max-h-[490px]" src={listCategorys.image}
+                alt={listCategorys.alt} />
             </div>
 
-            <h3 className="hidden sm:block font-darker-grotesque text-[23px] font-semibold no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listProducts.name}</h3>
+            <h3 className="hidden sm:block font-darker-grotesque text-[23px] font-semibold no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listCategorys.name}</h3>
           </Link>
         ))}
       </div>
