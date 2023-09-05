@@ -3,6 +3,7 @@ import { faLock, faEnvelope, faUser, faPhone, faTriangleExclamation } from '@for
 import React, { useState } from 'react';
 import { Input } from '../componente-input/input';
 
+
 export const Registro = () => {
 
   const [EMAIL, cambiarEMAIL] = useState({ campo: '', valido: null });
@@ -10,7 +11,7 @@ export const Registro = () => {
   const [NOMBRE, cambiarNOMBRE] = useState({ campo: '', valido: null });
   const [APELLIDO, cambiarAPELLIDO] = useState({ campo: '', valido: null });
   const [TELEFONO, cambiarTELEFONO] = useState({ campo: '', valido: null });
-
+const [terminos, cambiarTERMINOS] = useState
   const expresiones = {
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, 
     password: /^.{4,12}$/, // 4 a 12 digitos.
@@ -32,12 +33,53 @@ export const Registro = () => {
           <Input
           estado={EMAIL}
           cambiarEstado={cambiarEMAIL}
-            tipo="text"
+            tipo="email"
             icono={faEnvelope}
             label="E-MAIL"
             name="e-mail"
             leyendaError="Solo puede contener letras, numeros, puntos, guiones y guion bajo"
             expresionRegular={expresiones.correo}
+          />
+          <Input
+          estado={PASSWORD}
+          cambiarEstado={cambiarPASSWORD}
+            tipo="password"
+            icono={faLock}
+            label="PASSWORD"
+            name="password"
+            leyendaError="Tiene que ser de 4 a 12 dígitos"
+            expresionRegular={expresiones.password}
+          />
+          <Input
+          estado={NOMBRE}
+          cambiarEstado={cambiarNOMBRE}
+            tipo="text"
+            icono={faUser}
+            label="NOMBRE"
+            name="nombre"
+            leyendaError="Tiene que ser de 4 a 16 dígitos y solo puede contener letras"
+            expresionRegular={expresiones.nombre}
+          />
+
+          <Input
+          estado={APELLIDO}
+          cambiarEstado={cambiarAPELLIDO}
+            tipo="text"
+            icono={faUser}
+            label="APELLIDO"
+            name="apellido"
+            leyendaError="Tiene que ser de 4 a 16 dígitos y solo puede contener letras"
+            expresionRegular={expresiones.apellido}
+          />
+          <Input
+          estado={TELEFONO}
+          cambiarEstado={cambiarTELEFONO}
+            tipo="text"
+            icono={faPhone}
+            label="TELEFONO"
+            name="telefono"
+            leyendaError="Solo puede contener numeros y el maximo son 14 dígitos "
+            expresionRegular={expresiones.telefono}
           />
 
 
