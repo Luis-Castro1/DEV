@@ -15,8 +15,8 @@ function CartItem({ img, price, name, quantity, addToCart, restQuantity }) {
                 alt={name}
             />
             <div className='grid grid-cols-1 -space-y-10 ml-1'>
-                <strong className='text-[18px] font-medium font-darker-grotesque'>{name}</strong>
-                <strong className='text-[16px] font-normal font-darker-grotesque'>${price * quantity}</strong>
+                <strong className='text-[19px] font-extrabold font-darker-grotesque'>{name}</strong>
+                <strong className='text-[16px] font-extrabold font-darker-grotesque'>${price * quantity}</strong>
 
                 <footer className='flex gap-2 justify-center items-center'>
                     <small>
@@ -91,7 +91,7 @@ export function Cart() {
 
                         <div className=' flex-col'>
                             <div className='flex justify-between'>
-                                <strong className='text-[18px] font-normal font-darker-grotesque'>Subtotal</strong>
+                                <strong className='text-[20px] font-extrabold font-darker-grotesque'>Subtotal</strong>
                                 <strong className='text-[18px] font-medium font-darker-grotesque'>{}</strong>
                             </div>
 
@@ -100,11 +100,11 @@ export function Cart() {
                             </div>
 
                             <div>
-                                <button className='bg-[#F1F6F9] text-black font-darker-grotesque font-medium rounded-full w-full h-[3rem] my-2 border-[1px] border-black'>Tramitar pedido</button>
+                                <button className='bg-[#F1F6F9] text-black font-darker-grotesque font-extrabold rounded-full w-full h-[3rem] my-2 border-[1px] border-black hover:bg-blue-800/5 hover:text-[20px] text-[18px]'>Tramitar pedido</button>
                             </div>
                         </div>
 
-                        <button button className=' bg-[#F1F6F9] text-black font-darker-grotesque font-medium rounded-full w-full h-[5%] my-2 border-[1px] border-black' onClick={clearCart}>Clear
+                        <button button className=' bg-[#F1F6F9] text-black font-darker-grotesque font-extrabold rounded-full w-full h-[5%] my-2 border-[1px] border-black hover:bg-blue-800/5 hover:text-[20px] text-[18px]' onClick={clearCart}>Clear
                         </button>
                     </>
 

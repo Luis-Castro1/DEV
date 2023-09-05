@@ -9,6 +9,8 @@ import { NavBar } from "./NavBar";
 import { Recomendation } from "./Recomendation";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -52,7 +54,10 @@ export const ProductView = () => {
         <>
             <NavBar />
             <CategoriasNav />
-            <button onClick={handleGoBackAndClose}>Cerrar</button>
+            <button className="mt-[2rem] sm:my-[2rem] sm:ml-[5rem] ml-[1rem] px-2 gap-x-[5px] flex items-center text-white bg-black rounded-[5px]" onClick={handleGoBackAndClose}>
+                <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon>
+                <label>Regresar</label>
+            </button>
             <div className="product-preview ">
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-x-0 md:mx-20">
                     <div className="space-y-2 hidden overflow-hidden md:flex md:flex-col ">
