@@ -1,6 +1,6 @@
 // import { Favorites } from "./Favorites";
-import { Size } from "./Size";
-import { useParams, useNavigate } from "react-router-dom";
+import { SizeProductView } from "./SizeProductView";
+import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useRef } from "react";
 import { ProductPreviewContext } from "../context/ProductPreviewContext";
 import CategoriasNav from "./CategoriasNav";
@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
+
 
 
 
@@ -100,9 +101,10 @@ export const ProductView = () => {
                             <p className="text-[25px]">Camiseta estampada cuello redondo para hombre de ajuste holgado,jersey suave de algodón 100 % </p>
                         </div>
 
-                        <div className="sm:ml-20 sm:w-[70%] flex justify-center">
-
-                            <Size />
+                        <div className="sm:ml-20 sm:w-[70%] flex-col justify-center">
+                        <p className="font-[1000] text-[25px] py-[5px]">TALLAS</p>
+                            <SizeProductView />
+                           
                         </div>
 
                         {/* <div className="sm:ml-20 sm:w-[70%] flex justify-center my-[80px]">

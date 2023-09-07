@@ -1,9 +1,9 @@
 
-import { AddCart } from "./AddCart";
+import { AddCartProductView } from "./AddCartProductView";
 import "./Size.css";
 import { useState } from "react";
 
-export function Size({ onSelectSize }) {
+export function SizeProductView() {
     const [selectedSize, setSelectedSize] = useState('');
 
     const handleSizeChange = (event) => {
@@ -15,7 +15,7 @@ export function Size({ onSelectSize }) {
     return (
         <div className="w-[100%]">
 
-            <p className="font-[1000] text-[25px] py-[5px]">TALLAS</p>
+           
 
             <div className="product-option__values py-[10px] flex justify-center    ">
                 <label className=" ">
@@ -46,7 +46,7 @@ export function Size({ onSelectSize }) {
             </div>
 
 
-            <AddCart  selectedSize={selectedSize} />
+            <AddCartProductView  selectedSize={selectedSize} />
 
         </div>
     )

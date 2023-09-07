@@ -4,8 +4,8 @@ import { useCart } from '../hooks/useCart'
 import { ProductPreviewContext } from "../context/ProductPreviewContext";
 import { useContext, useState } from "react";
 
-export function AddCart({ selectedSize }) {
-    const { addToCart, cart, removeFromCart } = useCart();
+export function AddCartProductView({ selectedSize }) {
+    const { addToCart, cart } = useCart();
 
     const { productPreview } = useContext(ProductPreviewContext);
 
