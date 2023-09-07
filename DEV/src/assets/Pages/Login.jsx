@@ -14,10 +14,10 @@ export const Login = () => {
 
       if (input.value) {
         input.classList.add('border-gray-400', 'border-b-2');
-        label.classList.add('-top-6');
+        label.classList.add('-translate-y-5');
       } else {
         input.classList.remove('border-gray-400', 'border-b-2');
-        label.classList.remove('-top-6');
+        label.classList.remove('-translate-y-5');
       }
     };
 
@@ -41,13 +41,13 @@ export const Login = () => {
           <div className=' mt-20 relative font-sans left-[-10px]'>
             <FontAwesomeIcon icon={faUser} className='absolute left-[-20px] leading-[30px]' />
             <input type="text" id="email_input" className='w-[300px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer' />
-            <label htmlFor="email" id='email_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-300  pointer-events-none peer-focus:-top-6'>E-MAIL</label>
+            <label htmlFor="email" id='email_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-500 pointer-events-none peer-focus:-translate-y-5'>E-MAIL</label>
           </div>
 
           <div className='mt-10 relative font-sans left-[-10px]'>
             <FontAwesomeIcon icon={faLock} className='absolute left-[-20px] leading-[30px]' />
             <input type="password" id="pass_input" className='w-[300px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer' />
-            <label htmlFor="contraseña" id='pass_label' className='absolute left-0 text-gray-400 text-[13px] transition-all pointer-events-none peer-focus:-top-6'>CONTRASEÑA</label>
+            <label htmlFor="contraseña" id='pass_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-500 pointer-events-none peer-focus:-translate-y-5'>CONTRASEÑA</label>
           </div>
 
           <div className='flex items-center flex-col pt-10 font-darker-grotesque  '>
