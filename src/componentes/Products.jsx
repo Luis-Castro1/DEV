@@ -58,11 +58,9 @@ export const Products = ({ products }) => {
 
                 <div className='hidden group-hover:flex  group-hover:justify-center'>
                   <button className="w-full bg-white rounded-[2px]"
-                    style={{ background: isProductInCart ? 'red' : 'blue' }}
+                    style={{ background: 'blue' }}
                     onClick={() => {
-                      isProductInCart
-                        ? removeFromCart(product)
-                        : addToCart(product)
+                      addToCart(product)
                     }}
                   >
                     {

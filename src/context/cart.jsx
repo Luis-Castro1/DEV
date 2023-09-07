@@ -11,12 +11,7 @@ export function CartProvider({ children }) {
         //Confirmar si el producto ya está en el carrito
         const productInCartIndex = cart.findIndex(item => item.id === product.id)
 
-        if (productInCartIndex >= 0) {
-
-            const newCart = structuredClone(cart);
-            newCart[productInCartIndex].quantity += 1;
-            return setCart(newCart);
-        }
+      
 
         //Producto no está en el carrito
 
@@ -27,6 +22,18 @@ export function CartProvider({ children }) {
                 quantity: 1
             }
         ]))
+    }
+
+    const addQuantity = product => {
+        //Confirmar si el producto ya está en el carrito
+        const productInCartIndex = cart.findIndex(item => item.id === product.id)
+
+        if (productInCartIndex >= 0) {
+
+            const newCart = structuredClone(cart);
+            newCart[productInCartIndex].quantity += 1;
+            return setCart(newCart);
+        }
     }
 
     const removeFromCart = product => {
@@ -42,7 +49,7 @@ export function CartProvider({ children }) {
             setCart(newCart);
         }
 
-        if(productInCart.quantity === 0){
+        if (productInCart.quantity === 0) {
             removeFromCart(product);
         }
     }
@@ -55,6 +62,7 @@ export function CartProvider({ children }) {
         <CartContext.Provider value={{
             cart,
             addToCart,
+            addQuantity,
             removeFromCart,
             restQuantity,
             clearCart

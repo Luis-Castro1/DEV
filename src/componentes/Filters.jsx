@@ -46,7 +46,7 @@ export function Filters({ onChange }) {
                     <div className="flex gap-4">
                         <label className="pointer-events-none" htmlFor={minPriceFilterdId}>Precio minimo</label>
                         <input
-                            className={`${isGrabbing ? "cursor-grabbing" : "cursor-grab"} inputClass`}
+                            className={`${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
                             type="range"
                             id={minPriceFilterdId}
                             min='0'
