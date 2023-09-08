@@ -107,7 +107,7 @@ export const Registro = () => {
 
 
           <div className='mt-6 mb-2 relative font-darker-grotesque text-[16px] right-8'>
-            <input type="checkbox" className='cursor-pointer' checked={terminos} onChange={onChangeTerminos} />   He leido y acepto las <a href="..//Pages/Politica y Privacidad Dev-Soft.pdf" target="_blank"><b>politicas de privacidad</b></a>
+            <input type="checkbox" className='cursor-pointer' checked={terminos} onChange={onChangeTerminos} />   He leido y acepto las <a href="./Politica y Privacidad Dev-Soft.pdf" target="_blank"><b>politicas de privacidad</b></a>
           </div>
 
 
