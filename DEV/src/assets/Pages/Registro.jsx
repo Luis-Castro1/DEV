@@ -40,6 +40,9 @@ export const Registro = () => {
     }
   }
 
+
+
+
   return (
 
     <form className='flex justify-center items-center h-screen' onSubmit={onSubmit}>
