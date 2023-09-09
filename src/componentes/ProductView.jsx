@@ -107,10 +107,6 @@ export const ProductView = () => {
                            
                         </div>
 
-                        {/* <div className="sm:ml-20 sm:w-[70%] flex justify-center my-[80px]">
-                            <AddCart />
-                        </div> */}
-
                     </div >
 
 

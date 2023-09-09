@@ -30,7 +30,7 @@ export function AddCartProductView({ selectedSize }) {
 
 
     return (
-        <div className="flex flex-col justify-center w-full items-center gap-4  my-[80px]">
+        <div className="flex flex-col justify-center w-full sm:items-center gap-4  my-[80px]">
             <button
                 className="hover:bg-black/20 bg-transparent w-[80%] py-[1px] border border-stone-700 text-stone-700 font-semibold text-center"
                 type="button"
@@ -41,7 +41,7 @@ export function AddCartProductView({ selectedSize }) {
             </button>
 
 
-            <div className="flex">
+            <div className="flex justify-start w-[78%] text-center sm:text-justify sm:w-full">
 
                 {showError && (
                     <p className="text-red-500 mt-1 font-semibold text-[21px]">

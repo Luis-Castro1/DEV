@@ -17,7 +17,7 @@ export function SizeProductView() {
 
            
 
-            <div className="product-option__values py-[10px] flex justify-center    ">
+            <div className="product-option__values py-[10px] flex sm:justify-center">
                 <label className=" ">
                     <input type="radio" className="size" value="xs" checked={selectedSize === 'xs'} onChange={handleSizeChange} />
                     <span className="">XS</span>
