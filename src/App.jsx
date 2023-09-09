@@ -10,6 +10,7 @@ import categoriasNiño from './data/categoriasNiño'
 import { ItemDetailContainer } from './componentes/ItemDetailContainer'
 import { ProductPreviewProvider } from './context/ProductPreviewContext'
 import ProductView from './componentes/ProductView'
+import { Registro } from './Pages/Registro'
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registro />} />
 
           <Route path="/Categoria-Hombre/:categoria/:idProduct" element={<ProductView />} />
           <Route path="/Categoria-Hombre/:categoria" element={<ProductList gender='Hombre' />} />

@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 
 export const Login = () => {
-
-
-
   useEffect(() => {
     const emailInput = document.getElementById('email_input');
     const passwordInput = document.getElementById('pass_input');
@@ -39,12 +36,12 @@ export const Login = () => {
         <img src="src/assets/imagenes/Logo-dev.png" alt="" className="w-45 h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
         <form className='h-full flex flex-col pt-6 items-center'>
-          <h1 className=" mt-9 text-[1.5rem] font-darker-grotesque text-black/70 font-semibold">ACCEDE A TU CUENTA</h1>
+          <h1 className=" mt-9 text-[1.5rem] font-darker-grotesque text-black bg">ACCEDE A TU CUENTA</h1>
 
           <div className=' mt-20 relative font-sans left-[-10px]'>
             <FontAwesomeIcon icon={faUser} className='absolute left-[-20px] leading-[30px]' />
-            <input type="email" id="email_input" className='w-[300px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer' />
-            <label htmlFor="email" id='email_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-500  pointer-events-none peer-focus:-translate-y-5'>E-MAIL</label>
+            <input type="text" id="email_input" className='w-[300px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer' />
+            <label htmlFor="email" id='email_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-500 pointer-events-none peer-focus:-translate-y-5'>E-MAIL</label>
           </div>
 
           <div className='mt-10 relative font-sans left-[-10px]'>
@@ -55,7 +52,7 @@ export const Login = () => {
 
           <div className='flex items-center flex-col pt-10 font-darker-grotesque  '>
             <input type="button" value="INICIAR SESION" className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm ' />
-            <Link to='/registro' className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm text-center'>
+            <Link to='/register' className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm text-center'>
               <button className='' type="button" >REGISTRATE
               </button>
 
@@ -73,7 +70,6 @@ export const Login = () => {
     </div>
 
 
-
-
   )
+
 }
