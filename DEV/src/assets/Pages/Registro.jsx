@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faEnvelope, faUser, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 import React, { useState} from 'react';
 import { Input } from '../componente-input/input';
+import { Link } from 'react-router-dom';
 
 
 export const Registro = () => {
@@ -107,7 +108,7 @@ export const Registro = () => {
 
 
           <div className='mt-6 mb-2 relative font-darker-grotesque text-[16px] right-8'>
-            <input type="checkbox" className='cursor-pointer' checked={terminos} onChange={onChangeTerminos} />   He leido y acepto las <a href="./Politica y Privacidad Dev-Soft.pdf" target="_blank"><b>politicas de privacidad</b></a>
+            <input type="checkbox" className='cursor-pointer' checked={terminos} onChange={onChangeTerminos} />   He leido y acepto las <Link to="/Politica" target="_blank"><b>politicas de privacidad</b></Link>
           </div>
 
 

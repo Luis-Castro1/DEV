@@ -9,6 +9,7 @@ import categorias from './assets/data/categorias'
 import categoriasMujer from './assets/data/categoriasMujer'
 import categoriasNiño from './assets/data/categoriasNiño'
 import { Registro } from './assets/Pages/Registro'
+import { Politica } from './assets/Pages/Politica'
 
 
 
@@ -25,7 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
-
+        <Route path="Politica" element={<Politica/>} />
         <Route path="/Categoria-Hombre/" element={<Categorys listProducts={categorias} />} />
         <Route path="/Categoria-Hombre/:categoria" element={<ProductList />} />
 
@@ -35,7 +36,7 @@ function App() {
         <Route path="/Categoria-Niño" element={<Categorys listProducts={categoriasNiño} />} />
         <Route path="/Categoria-Niño/:categoria" element={<ProductList />} />
 
-       
+
 
       </Routes >
 
