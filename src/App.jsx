@@ -7,8 +7,6 @@ import { ProductList } from './componentes/ProductList'
 import categoriasHombre from './data/categorias'
 import categoriasMujer from './data/categoriasMujer'
 import categoriasNiño from './data/categoriasNiño'
-import { ItemDetailContainer } from './componentes/ItemDetailContainer'
-import { ProductPreviewProvider } from './context/ProductPreviewContext'
 import ProductView from './componentes/ProductView'
 import { Registro } from './Pages/Registro'
 

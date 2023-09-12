@@ -1,11 +1,12 @@
-import { useState} from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { Link } from "react-router-dom"
 import { Input } from '../componentes/InputComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faEnvelope, faUser, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 
-
 export const Registro = () => {
- 
+
   const [EMAIL, cambiarEMAIL] = useState({ campo: '', valido: null });
   const [PASSWORD, cambiarPASSWORD] = useState({ campo: '', valido: null });
   const [NOMBRE, cambiarNOMBRE] = useState({ campo: '', valido: null });
@@ -25,6 +26,10 @@ export const Registro = () => {
   const onChangeTerminos = (e) => {
     cambiarTERMINOS(e.target.checked);
   }
+
+  const history = useNavigate(); // Obtiene la instancia de history
+  const [mostrarCarga, setMostrarCarga] = useState(false);
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -35,19 +40,42 @@ export const Registro = () => {
       cambiarNOMBRE({ campo: '', valido: null });
       cambiarAPELLIDO({ campo: '', valido: null });
       cambiarTELEFONO({ campo: '', valido: null });
+
+      // Mostrar animación de carga
+
+      setTimeout(() => {
+        setMostrarCarga(true);
+      }, 1000)
+
+
+      // Esperar durante un tiempo antes de redirigir
+      setTimeout(() => {
+        // Ocultar la animación de carga y redirigir
+        setMostrarCarga(false);
+        history('/login');
+      }, 3000); // Cambia el valor según el tiempo de retraso deseado
+
     } else {
       cambiarformulariovalido(false);
     }
   }
 
-
-
-
   return (
 
     <form className='flex justify-center items-center h-screen' onSubmit={onSubmit}>
+
+      {mostrarCarga && (
+        <div className="loader-container fixed top-0 left-0 w-full h-full bg-black/50 flex
+        justify-center  items-center z-[9999]">
+          {/* Agrega aquí tu animación de carga */}
+          <div className="loader  border-[3px] border-[#f3f3f3]  border-t-[3px] border-t-[#3498db] rounded-[50%] w-[50px] h-[50px] animate-[spin_2s_linear_infinite]"></div>
+        </div>
+      )}
+
       <div className='h-[580px] w-[400px] bg-white rounded-2xl relative'>
-        <img src="src/assets/imagenes/Logo-dev.png" alt="" className=" h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <Link to={"/"}>
+          <img src="src/assets/imagenes/Logo-dev.png" alt="" className=" h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        </Link>
         <div className='h-full flex flex-col pt-6 items-center'>
           <h1 className=" mt-9 text-[1.5rem] font-darker-grotesque text-black bg">REGISTRATE</h1>
 

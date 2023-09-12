@@ -54,7 +54,9 @@ export function Cart() {
     return (
         <>
             <label className='cart-button cursor-pointer' htmlFor={cartCheckBoxId}>
-                Carrito <FontAwesomeIcon className='' icon={faCartShopping}></FontAwesomeIcon>
+                <li>
+                    Carrito <FontAwesomeIcon className='' icon={faCartShopping}></FontAwesomeIcon>
+                </li>
             </label>
 
             <button className='' id={cartCheckBoxId} type="button" onClick={toggleCartVisible} />
