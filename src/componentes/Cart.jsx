@@ -72,32 +72,28 @@ export function Cart() {
 
                 <ul>
                     {cart.length === 0 ? (
-                        <div className=' h-[500px] items-center flex justify-center'>
-                            <h1 className='text-[23px]'>El carrito está vacío</h1>
-                        </div>
-                    ) :
-
+                        <li>
+                            <div className='h-[500px] items-center flex justify-center'>
+                                <h1 className='text-[23px]'>El carrito está vacío</h1>
+                            </div>
+                        </li>
+                    ) : (
                         cart.map(product => (
                             <CartItem
                                 key={product.id}
                                 addQuantity={() => addQuantity(product)}
-                                restQuantity={() => restQuantity(product)} // Agregado
+                                restQuantity={() => restQuantity(product)}
                                 removeFromCart={() => removeFromCart(product)}
                                 {...product}
                             />
-
                         ))
-
-
-                    }
-
-
-
+                    )}
                 </ul>
+
 
                 {cart.length === 0 ? (
                     ''
-                ) :
+                ) : (
                     <>
                         <div className='bg-black/30 h-[1px] w-full'></div>
 
@@ -119,8 +115,7 @@ export function Cart() {
                         <button className=' bg-[#F1F6F9] text-black font-darker-grotesque font-extrabold rounded-full w-full h-[5%] my-2 border-[1px] border-black hover:bg-blue-800/5 hover:text-[20px] text-[18px]' onClick={clearCart}>Clear
                         </button>
                     </>
-
-                }
+                )}
 
 
             </aside>

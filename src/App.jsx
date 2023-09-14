@@ -9,6 +9,8 @@ import categoriasMujer from './data/categoriasMujer'
 import categoriasNiño from './data/categoriasNiño'
 import ProductView from './componentes/ProductView'
 import { Registro } from './Pages/Registro'
+import { ProtectRoute } from './Pages/ProtectRoute'
+import { DashBoard } from './Pages/DashBoard'
 
 
 
@@ -23,6 +25,11 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route path="/" element={<ProtectRoute />}>
+            <Route path="dashboard" element={<DashBoard />} />
+          </Route>
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registro />} />
 

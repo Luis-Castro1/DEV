@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import { Input } from '../componentes/InputComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faEnvelope, faUser, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
+import { useAuth } from '../context/AuthProvider';
 
 export const Registro = () => {
+
+  const auth = useAuth();
+
+  if (auth.isAuthenticated) {
+    return <Navigate to="/dashboard" />;
+  }
 
   const [EMAIL, cambiarEMAIL] = useState({ campo: '', valido: null });
   const [PASSWORD, cambiarPASSWORD] = useState({ campo: '', valido: null });
