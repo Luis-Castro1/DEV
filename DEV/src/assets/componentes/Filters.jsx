@@ -1,5 +1,5 @@
 import { useState, useId } from "react"
-
+import "./styled.css"
 
 export function Filters({onChange}) {
 
@@ -17,9 +17,9 @@ export function Filters({onChange}) {
     }
 
     return (
-
         <>
             <section>
+           
                 <div className="flex gap-4 mx-8 items-center">
                     <label htmlFor={minPriceFilterdId}>Precio minimo</label>
                     <input
@@ -28,6 +28,7 @@ export function Filters({onChange}) {
                         min= '0'
                         max= '3000'
                         onChange={handleChangeMinPrice}
+                        className=" filtro appearance-none bg-black border-3 border-slate-600 rounded-2xl"
                     />
                     <span>{minPrice}</span>
                 </div>
