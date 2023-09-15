@@ -54,7 +54,7 @@ export function Cart() {
     return (
         <>
             <label className='cart-button cursor-pointer' htmlFor={cartCheckBoxId}>
-                <li>
+                <li className='list-none text-neutral-900 font-clear-sans font-hairline rounded-md px-1 py-1 text-md sm:text-[15px]'>
                     Carrito <FontAwesomeIcon className='' icon={faCartShopping}></FontAwesomeIcon>
                 </li>
             </label>

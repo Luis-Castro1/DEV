@@ -2,7 +2,7 @@ import './App.css'
 import { Categorys } from './Pages/Categorys'
 import { Home } from './Pages/Home'
 import { Login } from './Pages/Login'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ProductList } from './componentes/ProductList'
 import categoriasHombre from './data/categorias'
 import categoriasMujer from './data/categoriasMujer'
@@ -11,12 +11,14 @@ import ProductView from './componentes/ProductView'
 import { Registro } from './Pages/Registro'
 import { ProtectRoute } from './Pages/ProtectRoute'
 import { DashBoard } from './Pages/DashBoard'
+import { useAuth } from './context/AuthProvider'
 
 
 
 
 function App() {
 
+  const { isAuthenticated } = useAuth();
 
 
   return (
@@ -30,8 +32,8 @@ function App() {
             <Route path="dashboard" element={<DashBoard />} />
           </Route>
 
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Registro />} />
+          <Route path="/login" element={isAuthenticated ? <Navigate to="/"/> : <Login />} />
+          <Route path="/register" element={isAuthenticated ? <Navigate to="/"/> : <Registro />} />
 
           <Route path="/Categoria-Hombre/:categoria/:idProduct" element={<ProductView />} />
           <Route path="/Categoria-Hombre/:categoria" element={<ProductList gender='Hombre' />} />
