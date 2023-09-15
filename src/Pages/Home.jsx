@@ -8,7 +8,7 @@ export const Home = () => {
     return (
         <div>
             <NavBar />
-            <div className=" max-w-[1780px] grid lg:grid-cols-3  grid-cols-1 justify-center mt-9 pb-3 pt-5 mx-auto text-white">
+            <div className=" max-w-[1780px] grid lg:grid-cols-3  grid-cols-1 justify-center sm:mt-9 pb-3 pt-5 mx-auto text-white">
                 <Categorias
                     to="/Categoria-Hombre"
                     title="HOMBRE"

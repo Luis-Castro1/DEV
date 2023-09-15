@@ -21,15 +21,23 @@ function CartItem({ img, price, name, quantity, addQuantity, restQuantity, remov
             </div>
 
             <div className='grid grid-cols-1 -space-y-10 ml-1'>
-                <strong className='text-[19px] font-extrabold font-darker-grotesque'>{name}</strong>
-                <strong className='text-[16px] font-extrabold font-darker-grotesque'>${price * quantity}</strong>
+                <strong className='text-[19px] font-[600] font-darker-grotesque'>{name}</strong>
+                <strong className='text-[16px] font-[600] font-darker-grotesque'>${price * quantity}</strong>
 
-                <footer className='flex gap-2 justify-center items-center'>
-                    <small>
-                        Cantidad: {quantity}
-                    </small>
-                    <button onClick={addQuantity} className='p-2'>+</button>
-                    <button onClick={restQuantity} className='p-2'>-</button>
+                <footer className='h-[90%] flex gap-2 justify-center items-center font-[500]'>
+                    <div className='space-x-3'>
+                        <small>
+                            Cantidad:
+                        </small>
+                        <small>
+                            {quantity}
+                        </small>
+
+                    </div>
+                    <div className='grid grid-cols-1 gap-y-0 font-[500] px-2'>
+                        <button onClick={addQuantity} className='text-[18px]'>+</button>
+                        <button onClick={restQuantity} className='text-[18px]'>-</button>
+                    </div>
                 </footer>
             </div>
         </li>
@@ -54,7 +62,7 @@ export function Cart() {
     return (
         <>
             <label className='cart-button cursor-pointer' htmlFor={cartCheckBoxId}>
-                <li className='list-none text-neutral-900 font-clear-sans font-hairline rounded-md px-1 py-1 text-md sm:text-[15px]'>
+                <li className='list-none text-neutral-900 font-clear-sans sm:font-hairline rounded-md px-1 py-1 text-md sm:text-[15px]'>
                     Carrito <FontAwesomeIcon className='' icon={faCartShopping}></FontAwesomeIcon>
                 </li>
             </label>
@@ -99,20 +107,20 @@ export function Cart() {
 
                         <div className=' flex-col'>
                             <div className='flex justify-between'>
-                                <strong className='text-[20px] font-extrabold font-darker-grotesque'>Subtotal</strong>
+                                <strong className='text-[20px] font-[600] font-darker-grotesque'>Subtotal</strong>
                                 <strong className='text-[18px] font-medium font-darker-grotesque'>{ }</strong>
                             </div>
 
                             <div>
-                                <strong>Envio</strong>
+                                <strong className='font-[600]'>Envio</strong>
                             </div>
 
                             <div>
-                                <button className='bg-[#F1F6F9] text-black font-darker-grotesque font-extrabold rounded-full w-full h-[3rem] my-2 border-[1px] border-black hover:bg-blue-800/5 hover:text-[20px] text-[18px]'>Tramitar pedido</button>
+                                <button className='bg-[#F1F6F9] text-black font-darker-grotesque font-[600] rounded-full w-full h-[3rem] my-2 border-[1px] border-black hover:bg-blue-800/5 hover:text-[20px] text-[18px]'>Tramitar pedido</button>
                             </div>
                         </div>
 
-                        <button className=' bg-[#F1F6F9] text-black font-darker-grotesque font-extrabold rounded-full w-full h-[5%] my-2 border-[1px] border-black hover:bg-blue-800/5 hover:text-[20px] text-[18px]' onClick={clearCart}>Clear
+                        <button className=' bg-[#F1F6F9] text-black font-darker-grotesque font-[600] rounded-full w-full h-[5%] my-2 border-[1px] border-black hover:bg-blue-800/5 hover:text-[20px] text-[18px]' onClick={clearCart}>Clear
                         </button>
                     </>
                 )}

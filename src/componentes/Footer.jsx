@@ -13,7 +13,7 @@ export const Footer = () => {
 
                     <div className=" h-[90%] py-2 my-5 flex-col space-y-1">
 
-                        <h3 className='my-4 sm:my-1 sm:text-center text-black font-semibold text-[18px] sm:text-[15px]'>Ayuda</h3>
+                        <h3 className='my-4 sm:my-1 sm:text-center text-black/90 font-[600] text-[18px] sm:text-[15px]'>Ayuda</h3>
 
                         <a href="">
                             <p className={helpLink} >Envío</p>
@@ -31,7 +31,7 @@ export const Footer = () => {
 
                     <div className=" h-[90%] py-2 my-5 sm:my-2 flex-col space-y-1">
 
-                        <h3 className='my-2 text-center text-black font-semibold text-[18px] sm:text-[15px]'>Contactanos</h3>
+                        <h3 className='my-2 text-center text-black/90 font-[600] text-[18px] sm:text-[15px]'>Contactanos</h3>
 
                         <div className="flex hover:scale-125 duration-100 group">
 
@@ -54,7 +54,7 @@ export const Footer = () => {
 
                     <div className="h-[90%] w-screen sm:w-auto my-6 sm:py-2 sm:my-4 flex-col space-y-1">
 
-                        <h3 className='text-[18px] my-2 text-center text-black font-semibold sm:text-[15px]'>Redes</h3>
+                        <h3 className='text-[18px] my-2 text-center text-black/90 font-[600] sm:text-[15px]'>Redes</h3>
 
                         <div className='flex justify-center sm:justify-between gap-[50px] text-[25px] '>
                             <a href="">

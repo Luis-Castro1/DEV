@@ -91,18 +91,18 @@ export const ProductView = () => {
 
                     <div className="ml-10  sm:mx-2 font-darker-grotesque  text-2xl"  >
                         <div className="  sm:ml-20 min-w-full">
-                            <h1 className="font-[1000] text-4xl  mt-[20px] mb-[10px] ">{productPreview ? product.name : ""}</h1>
-                            <p className="mt-[15px] font-semibold text-black/70">${productPreview ? product.price : ""}</p>
+                            <h1 className="font-[600] text-4xl  mt-[20px] mb-[10px] ">{productPreview ? product.name : ""}</h1>
+                            <p className="mt-[15px] font-[600] text-black/70">${productPreview ? product.price : ""}</p>
                             <div className="bg-black/60 my-2 h-[1.2px] w-[70%] text-black/70"></div>
-                            <p className="mt-[5px]  font-bold" >Color: hueso</p>
+                            <p className="mt-[5px]  font-[700]" >Color: hueso</p>
                         </div>
 
-                        <div className="sm:ml-20 text-justify my-3 w-[90%] sm:w-[70%] text-black/80 font-semibold ">
+                        <div className="sm:ml-20 text-justify my-3 w-[90%] sm:w-[70%] text-black/80 font-[500] ">
                             <p className="text-[25px]">Camiseta estampada cuello redondo para hombre de ajuste holgado,jersey suave de algodón 100 % </p>
                         </div>
 
                         <div className="sm:ml-20 sm:w-[70%] flex-col justify-center">
-                        <p className="font-[1000] text-[25px] py-[5px]">TALLAS</p>
+                        <p className="font-[600] text-[25px] py-[5px]">TALLAS</p>
                             <SizeProductView />
                            
                         </div>
@@ -114,7 +114,7 @@ export const ProductView = () => {
                 </div>
 
                 <div className="ml-[40px] font-darker-grotesque text-black text-xl mt-[20px] mb-[200px]">
-                    <p className="font-bold text-3xl">Comentarios</p>
+                    <p className="font-[600] text-3xl">Comentarios</p>
 
                 </div>
 

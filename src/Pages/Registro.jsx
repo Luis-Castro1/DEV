@@ -147,7 +147,7 @@ export const Registro = () => {
 
 
           {formulariovalido === false && <div className='pt-1 bg-red-400 h-[30px] w-[350px] rounded-[3px] '>
-            <p className='text-[14px] font-sans'>
+            <p className='text-[14px]'>
               <FontAwesomeIcon icon={faTriangleExclamation} className='ml-2' />
               <b className='ml-2'>Error:</b> Porfavor rellene los campos correctamente.
             </p>
@@ -155,7 +155,7 @@ export const Registro = () => {
           <div className='flex items-center flex-col font-darker-grotesque mt-2'>
             <input type="submit" value="CREAR CUENTA" className='py-1  w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm ' />
           </div>
-          {formulariovalido && <p className='text-[13px] font-sans text-green-600 '>Su cuenta se ha creado correctamente!</p>}
+          {formulariovalido && <p className='text-[13px] text-green-600 '>Su cuenta se ha creado correctamente!</p>}
         </div>
       </div>
 

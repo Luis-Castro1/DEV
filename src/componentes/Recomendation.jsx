@@ -6,7 +6,7 @@ export const Recomendation = () => {
         <>
 
             <div className='w-full'>
-                <p className="font-darker-grotesque font-semibold text-3xl mx-3 my-2">Recomendados para ti </p>
+                <p className="font-darker-grotesque font-[500] text-3xl mx-3 my-2">Recomendados para ti </p>
             </div>
 
 

@@ -58,9 +58,20 @@ export function AuthProvider({ children }) {
         }
     }
 
+    const logout = () => {
+
+        setIsAuthenticated(false);
+        setEmail('');
+        setPassword('')
+
+       saveData('', '', false)
+
+    }
+
     return (
         <AuthContext.Provider value={{
             isAuthenticated,
+            logout,
             email,
             password,
             login

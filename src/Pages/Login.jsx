@@ -17,11 +17,8 @@ export const Login = () => {
 
   const userLogin = () => {
     login(userEmail, userPassword);
+    navigate('/dashboard');
   }
-
-
-
-
 
 
   useEffect(() => {
@@ -63,15 +60,29 @@ export const Login = () => {
       setError(true)
     } else {
 
-      userLogin();
-    }
-    if (isAuthenticated) {
-      return navigate('/dashboard'); // Usa la función navigate para redirigir al usuario
-    }
+
+      setTimeout(() => {
+        setLoading(true);
+
+      }, 100)
 
 
+      // Esperar durante un tiempo antes de redirigir
+      setTimeout(() => {
+        // Ocultar la animación de carga y redirigir
+        setLoading(false);
+        userLogin();
+
+      }, 1000); // Cambia el valor según el tiempo de retraso deseado
+
+    }
 
   }
+
+  if (isAuthenticated) {
+    return navigate('/dashboard'); // Usa la función navigate para redirigir al usuario
+  }
+
 
 
   return (
@@ -80,7 +91,17 @@ export const Login = () => {
         <img src="src/assets/imagenes/Logo-dev.png" alt="" className="w-45 h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
         <form className='h-full flex flex-col pt-6 items-center'>
+
+          {loading && (
+            <div className="loader-container fixed top-0 left-0 w-full h-full bg-black/50 flex
+        justify-center  items-center z-[9999]">
+              {/* Agrega aquí tu animación de carga */}
+              <div className="loader  border-[3px] border-[#f3f3f3]  border-t-[3px] border-t-[#3498db] rounded-[50%] w-[50px] h-[50px] animate-[spin_2s_linear_infinite]"></div>
+            </div>
+          )}
+
           <h1 className=" mt-9 text-[1.5rem] font-darker-grotesque text-black bg">ACCEDE A TU CUENTA</h1>
+
 
           <div className=' mt-20 relative font-sans left-[-10px]'>
             <FontAwesomeIcon icon={faUser} className='absolute left-[-20px] leading-[30px]' />
@@ -113,7 +134,7 @@ export const Login = () => {
           {error && (
 
             <div className='flex text-red-600 mt-5 justify-center'>
-              <p className='text-[14px] font-sans'>
+              <p className='text-[14px]'>
                 <FontAwesomeIcon icon={faTriangleExclamation} className='ml-2' />
                 <b className='ml-2'>Error:</b> Por favor rellene los campos correctamente.
               </p>
@@ -127,9 +148,9 @@ export const Login = () => {
               onClick={submitInfo}
               type="submit"
               value="INICIAR SESION"
-              className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm ' />
+              className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-[500] text-sm ' />
 
-            <Link to='/register' className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm text-center'>
+            <Link to='/register' className='py-1 pb-1 block mb-2 w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-[500] text-sm text-center'>
               <button
                 type="button"
               >REGISTRATE
@@ -138,7 +159,7 @@ export const Login = () => {
 
           </div>
 
-          <div className='relative left-[-55px] font-sans'>
+          <div className='relative left-[-55px] '>
             <a className='text-gray-400 hover:text-gray-600 text-[14px]' href="">¿Has olvidado la contraseña?</a>
           </div>
 
