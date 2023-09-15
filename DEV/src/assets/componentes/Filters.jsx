@@ -28,7 +28,7 @@ export function Filters({onChange}) {
                         min= '0'
                         max= '3000'
                         onChange={handleChangeMinPrice}
-                        className=" filtro appearance-none bg-black border-3 border-slate-600 rounded-2xl"
+                        className=" filtro appearance-none bg- border-3 border-slate-600 rounded-2xl"
                     />
                     <span>{minPrice}</span>
                 </div>
