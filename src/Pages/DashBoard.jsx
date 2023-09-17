@@ -10,7 +10,7 @@ import { Footer } from '../componentes/Footer'
 
 export const DashBoard = () => {
 
-  const { logout, email } = useAuth();
+  const { logout, user } = useAuth();
   const navigation = useNavigate();
   const [showMenu, setShowMenu] = useState(false)
 
@@ -55,7 +55,7 @@ export const DashBoard = () => {
           <div className=" h-[90%] ">
 
             <div className="flex justify-center bg-black text-white text-[30px] items-center mt-10 sm:mt-0">
-              <strong className="font-darker-grotesque font-[800] uppercase">Hola {email}!</strong>
+              <strong className="font-darker-grotesque font-[800] uppercase">Hola {user.name}!</strong>
             </div>
 
             <div className="h-full flex flex-col z-[500]">
@@ -119,19 +119,19 @@ export const DashBoard = () => {
 
               <div className="space-y-2">
                 <p className="font-darker-grotesque font-[800] text-[20px]">Nombre</p>
-                <p>Luis Ángel</p>
+                <p>{user.name}</p>
               </div>
 
               <div className="space-y-2">
                 <p className="font-darker-grotesque font-[800] text-[20px]">Apellido</p>
-                <p>Castro Cabrera</p>
+                <p></p>
               </div>
 
             </div>
 
             <div className="w-full flex-col space-y-2">
               <p className="font-darker-grotesque font-[800] text-[20px]">Correo</p>
-              <p>lusiiuiu@gmail.com</p>
+              <p>{user.email}</p>
             </div>
 
             <div className="grid grid-cols-2 gap-y-8 ">

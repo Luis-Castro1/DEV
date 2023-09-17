@@ -11,7 +11,7 @@ const linkHover = "hover:scale-125 cursor-pointer transtition-all duration-200"
 
 
 export const NavBar = () => {
-  const { isAuthenticated, email } = useAuth();
+  const { isAuthenticated, user } = useAuth();
 
   return (
     <div className="grid md:grid-cols-3  grid-cols-1 justify-between py-1">
@@ -50,7 +50,7 @@ export const NavBar = () => {
         <div className='justify-center flex'>
           <NavLink className={linkHover} to={isAuthenticated ? "/perfil" : "/login"}>
             <li className={classLi}>
-              {isAuthenticated ? email : 'Cuenta'}
+              {isAuthenticated ? user.name : 'Cuenta'}
               <FontAwesomeIcon 
               icon={faUser} 
               className="text-black px-1" />

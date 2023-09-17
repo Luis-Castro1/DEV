@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faUser, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 import { useAuth } from '../context/AuthProvider';
+import LoadingAnimation from '../componentes/LoadingAnimation'
 
 export const Login = () => {
 
@@ -14,13 +15,11 @@ export const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-  console.log(isAuthenticated)
 
   const userLogin = () => {
     setErrorLogin(false)
+    setErrorText(false);
     login(userEmail, userPassword, setErrorLogin, setLoading);
-    // No intentes acceder a showError aquí, ya que no se habrá actualizado aún
-
   }
 
 
@@ -53,6 +52,8 @@ export const Login = () => {
       emailInput.removeEventListener('input', handleInput);
       passwordInput.removeEventListener('input', handleInput);
     };
+
+
   }, []);
 
   useEffect(() => {
@@ -64,6 +65,7 @@ export const Login = () => {
 
     if (!userEmail || !userPassword) {
       console.log("error")
+      setErrorLogin(false)
       setErrorText(true)
 
     } else {
@@ -88,11 +90,7 @@ export const Login = () => {
         <form className='h-full flex flex-col pt-6 items-center'>
 
           {loading && (
-            <div className="loader-container fixed top-0 left-0 w-full h-full bg-black/50 flex
-        justify-center  items-center z-[9999]">
-              {/* Agrega aquí tu animación de carga */}
-              <div className="loader  border-[3px] border-[#f3f3f3]  border-t-[3px] border-t-[#3498db] rounded-[50%] w-[50px] h-[50px] animate-[spin_2s_linear_infinite]"></div>
-            </div>
+            <LoadingAnimation />
           )}
 
           <h1 className=" mt-9 text-[1.5rem] font-darker-grotesque text-black bg">ACCEDE A TU CUENTA</h1>
