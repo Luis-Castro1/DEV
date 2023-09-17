@@ -9,8 +9,6 @@ export function HeaderFilters({changeFilters}) {
             <NavBar />
             <CategoriasNav />
 
-            <h1>Filtros</h1>
-
             <Filters onChange={changeFilters} />
         </>
     )

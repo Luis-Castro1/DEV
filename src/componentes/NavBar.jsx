@@ -1,14 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMagnifyingGlass, faUser, faHeart, faCartShopping }
+import { faMagnifyingGlass, faUser, faHeart }
   from "@fortawesome/free-solid-svg-icons"
 import { Link, NavLink } from "react-router-dom"
 import { Cart } from "./Cart"
+import { useAuth } from "../context/AuthProvider"
 
-const classLi = "list-none text-neutral-900 font-clear-sans font-hairline rounded-md px-1 py-1 text-md sm:text-[15px]"
+const classLi = "list-none text-neutral-900 font-clear-sans sm:font-hairline rounded-md px-1 py-1 text-md sm:text-[15px]"
 const linkHover = "hover:scale-125 cursor-pointer transtition-all duration-200"
 
 
+
 export const NavBar = () => {
+  const { isAuthenticated, user } = useAuth();
+
   return (
     <div className="grid md:grid-cols-3  grid-cols-1 justify-between py-1">
 
@@ -44,8 +48,12 @@ export const NavBar = () => {
       <div className="grid grid-cols-3 justify-center items-start my-2 py-1">
 
         <div className='justify-center flex'>
-          <NavLink className={linkHover} to="/login">
-            <li className={classLi}>Cuenta <FontAwesomeIcon icon={faUser} style={{ color: "black", }} />
+          <NavLink className={linkHover} to={isAuthenticated ? "/perfil" : "/login"}>
+            <li className={classLi}>
+              {isAuthenticated ? user.name : 'Cuenta'}
+              <FontAwesomeIcon 
+              icon={faUser} 
+              className="text-black px-1" />
             </li>
           </NavLink>
         </div>
@@ -58,10 +66,9 @@ export const NavBar = () => {
         </div>
 
         <div className='justify-center flex'>
-          <li className={classLi} >
-            <Cart />
 
-          </li>
+          <Cart />
+
         </div>
 
 

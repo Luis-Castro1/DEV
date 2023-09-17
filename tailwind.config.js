@@ -6,8 +6,8 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'clear-sans': ['clear-sans?styles=20834'],
-      'darker-grotesque': ['Darker+Grotesque:wght@300&display=swap']
+      'clear-sans': 'clear-sans',
+      'darker-grotesque': 'Darker Grotesque, sans-serif'
     }
     ,
     fontWeight: {
@@ -20,7 +20,6 @@ export default {
       semibold: '650',
       bold: '700',
       extrabold: '800',
-      'extra-bold': '800',
       black: '900',
     },
     extend: {},
