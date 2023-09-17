@@ -9,22 +9,25 @@ export const Login = () => {
   const { isAuthenticated, login } = useAuth();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [errorText, setErrorText] = useState(false);
+  const [errorLogin, setErrorLogin] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   console.log(isAuthenticated)
 
   const userLogin = () => {
-    login(userEmail, userPassword);
-    navigate('/dashboard');
+    setErrorLogin(false)
+    login(userEmail, userPassword, setErrorLogin, setLoading);
+    // No intentes acceder a showError aquí, ya que no se habrá actualizado aún
+
   }
 
 
   useEffect(() => {
 
     if (isAuthenticated === true) {
-      return <Navigate to="/dashboard" />;
+      return <Navigate to="/perfil" />;
     }
 
     const emailInput = document.getElementById('email_input');
@@ -52,35 +55,27 @@ export const Login = () => {
     };
   }, []);
 
+  useEffect(() => {
+    console.log("login api error " + errorLogin);
+  }, [errorLogin]); // Esto se ejecutará cada vez que showError cambie
+
   const submitInfo = (e) => {
     e.preventDefault();
 
     if (!userEmail || !userPassword) {
       console.log("error")
-      setError(true)
+      setErrorText(true)
+
     } else {
 
-
-      setTimeout(() => {
-        setLoading(true);
-
-      }, 100)
-
-
-      // Esperar durante un tiempo antes de redirigir
-      setTimeout(() => {
-        // Ocultar la animación de carga y redirigir
-        setLoading(false);
-        userLogin();
-
-      }, 1000); // Cambia el valor según el tiempo de retraso deseado
+      userLogin();
 
     }
 
   }
 
   if (isAuthenticated) {
-    return navigate('/dashboard'); // Usa la función navigate para redirigir al usuario
+    return navigate('/perfil'); // Usa la función navigate para redirigir al usuario
   }
 
 
@@ -131,7 +126,7 @@ export const Login = () => {
             <label htmlFor="contraseña" id='pass_label' className='absolute left-0 text-gray-400 text-[13px] transition-all duration-500 pointer-events-none peer-focus:-translate-y-5'>CONTRASEÑA</label>
           </div>
 
-          {error && (
+          {errorText && (
 
             <div className='flex text-red-600 mt-5 justify-center'>
               <p className='text-[14px]'>
@@ -142,7 +137,11 @@ export const Login = () => {
 
           )}
 
-          <div className={`flex items-center flex-col ${!error ? 'pt-10' : 'mt-5'} font-darker-grotesque `}>
+          {errorLogin && (
+            <p>Usuario o contraseña incorrecta</p>
+          )}
+
+          <div className={`flex items-center flex-col ${!errorLogin ? 'pt-10' : 'mt-5'} font-darker-grotesque `}>
 
             <input
               onClick={submitInfo}

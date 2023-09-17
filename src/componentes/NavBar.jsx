@@ -48,7 +48,7 @@ export const NavBar = () => {
       <div className="grid grid-cols-3 justify-center items-start my-2 py-1">
 
         <div className='justify-center flex'>
-          <NavLink className={linkHover} to={isAuthenticated ? "/dashboard" : "/login"}>
+          <NavLink className={linkHover} to={isAuthenticated ? "/perfil" : "/login"}>
             <li className={classLi}>
               {isAuthenticated ? email : 'Cuenta'}
               <FontAwesomeIcon 

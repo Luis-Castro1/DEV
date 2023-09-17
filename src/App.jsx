@@ -1,7 +1,7 @@
 import './App.css'
 import { Categorys } from './Pages/Categorys'
 import { Home } from './Pages/Home'
-import { Login } from './Pages/Login'
+import LoginApi from './Pages/LoginApi'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ProductList } from './componentes/ProductList'
 import categoriasHombre from './data/categorias'
@@ -12,6 +12,7 @@ import { Registro } from './Pages/Registro'
 import { ProtectRoute } from './Pages/ProtectRoute'
 import { DashBoard } from './Pages/DashBoard'
 import { useAuth } from './context/AuthProvider'
+import { Login } from './Pages/Login'
 
 
 
@@ -29,7 +30,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/" element={<ProtectRoute />}>
-            <Route path="dashboard" element={<DashBoard />} />
+            <Route path="perfil" element={<DashBoard />} />
           </Route>
 
           <Route path="/login" element={isAuthenticated ? <Navigate to="/"/> : <Login />} />

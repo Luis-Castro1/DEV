@@ -1,17 +1,16 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import axios from 'axios';
 
 //Crear contexto
 export const AuthContext = createContext()
 
 export function AuthProvider({ children }) {
 
+
     const userLoginData = localStorage.getItem("userToken");
     let initialEmail = '';
     let initialPassword = '';
     let initialAuthenticated = '';
-
-    const userInfo = { email: "luis", password: "1" };
-    console.log(userInfo.email)
 
     if (userLoginData) {
         try {
@@ -39,24 +38,35 @@ export function AuthProvider({ children }) {
     }
 
 
-    const login = (userEmail, userPassword) => {
+    const login = async (userEmail, userPassword, stateError, stateLoad) => {
 
+        
+        try {
 
-        if (userEmail === userInfo.email && userPassword === userInfo.password) {
+            stateLoad(true)
 
-            setIsAuthenticated(true)
-            setEmail(userEmail);
-            setPassword(userPassword);
+            const response = await axios.post('https://fakestoreapi.com/auth/login', {
+                username: userEmail,
+                password: userPassword,
+            });
 
-            saveData(userEmail, userPassword, true);
-            console.log(isAuthenticated)
-            
+            const token = response.data.token;
+            // Almacena el token en el estado global o en una cookie según tus necesidades
+            console.log('Token:', token);
 
-        } else {
-            setIsAuthenticated(false)
-            console.log("error")
+            setIsAuthenticated(true);
+      
+
+        } catch (error) {
+            console.error('Error de inicio de sesión:', error);
+            stateError(true);
         }
-    }
+
+        finally {
+            stateLoad(false)
+        }
+    };
+
 
     const logout = () => {
 
@@ -64,7 +74,7 @@ export function AuthProvider({ children }) {
         setEmail('');
         setPassword('')
 
-       saveData('', '', false)
+        saveData('', '', false)
 
     }
 
