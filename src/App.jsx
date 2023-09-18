@@ -38,13 +38,13 @@ function App() {
 
           <Route path="/Categoria-Hombre/:categoria/:idProduct" element={<ProductView />} />
           <Route path="/Categoria-Hombre/:categoria" element={<ProductList gender='Hombre' />} />
-          <Route path="/Categoria-Hombre/" element={<Categorys listCategorys={categoriasHombre} />} />
+          <Route path="/Categoria-Hombre" element={<Categorys gender='Hombre' />} />
 
-          <Route path="/Categoria-Mujer" element={<Categorys listCategorys={categoriasMujer} />} />
+          <Route path="/Categoria-Mujer" element={<Categorys gender='Mujer' />} />
           <Route path="/Categoria-Mujer/:categoria" element={<ProductList gender='Mujer' />} />
           <Route path="/Categoria-Mujer/:categoria/:product" element={<ProductView />} />
 
-          <Route path="/Categoria-Niño" element={<Categorys listCategorys={categoriasNiño} />} />
+          <Route path="/Categoria-Niño" element={<Categorys gender='Niño' />} />
           <Route path="/Categoria-Niño/:categoria" element={<ProductList gender='Niño' />} />
           <Route path="/Categoria-Niño/:categoria/:product" element={<ProductView />} />
 
