@@ -1,18 +1,22 @@
-import { useAuth } from "../context/AuthProvider";
+import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import '../componentes/cart.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCloud, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useAuth } from "../context/AuthProvider";
 import { CategoriasNav } from '../componentes/CategoriasNav'
 import { Footer } from '../componentes/Footer'
+import EditInformationModal from "../componentes/EditInformationModal";
+
 
 
 export const DashBoard = () => {
 
   const { logout, user } = useAuth();
+
+
   const navigation = useNavigate();
   const [showMenu, setShowMenu] = useState(false)
+  const [showForm, setShowForm] = useState(false)
 
   const userLogout = () => {
     logout();
@@ -25,8 +29,10 @@ export const DashBoard = () => {
     <>
 
       <div className="hidden sm:flex sm:flex-col sm:justify-center sm:items-center sm:mt-5">
-        <img className=" text-white w-[10%] rounded-sm "
-          src="src\assets\imagenes\Logo-dev.png" />
+        <Link to='/' className="text-white w-[10%] rounded-sm">
+          <img className=" "
+            src="src\assets\imagenes\Logo-dev.png" />
+        </Link>
       </div>
 
       <div className="hidden sm:block sm:w-full">
@@ -36,8 +42,10 @@ export const DashBoard = () => {
       <div className="flex flex-col h-full sm:grid-flow-col sm:grid sm:py-20 sm:px-10 sm:gap-10">
 
         <div className="sm:hidden flex flex-col justify-center items-center mt-5">
-          <img className=" text-white w-[30%] rounded-sm "
-            src="src\assets\imagenes\Logo-dev.png" />
+          <Link to='/' className="text-white w-[30%] rounded-sm">
+            <img className="  "
+              src="src\assets\imagenes\Logo-dev.png" />
+          </Link>
         </div>
 
         <div className="sm:hidden block w-full">
@@ -149,9 +157,15 @@ export const DashBoard = () => {
             </div>
 
             <div className="w-full flex justify-end">
-              <button className="w-full h-full bg-black text-white rounded-md">
+              <button className="w-full h-full bg-black text-white rounded-md"
+                onClick={() => setShowForm(true)}>
                 Editar Información
               </button>
+
+              <EditInformationModal isOpen={showForm} onClose={() => setShowForm(false)}>
+
+              </EditInformationModal>
+
             </div>
 
           </div>

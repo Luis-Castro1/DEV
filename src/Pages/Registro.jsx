@@ -6,10 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faEnvelope, faUser, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 import { useAuth } from '../context/AuthProvider';
 import LoadingAnimation from '../componentes/LoadingAnimation';
+import expresiones from '../hooks/expresiones'
+import { useProfileEdit } from '../context/ProfileEdit';
 
 export const Registro = () => {
 
   const auth = useAuth();
+  const { createUser } = useProfileEdit();
+
 
   if (auth.isAuthenticated) {
     return <Navigate to="/dashboard" />;
@@ -22,27 +26,31 @@ export const Registro = () => {
   const [TELEFONO, cambiarTELEFONO] = useState({ campo: '', valido: null });
   const [terminos, cambiarTERMINOS] = useState(false);
   const [formulariovalido, cambiarformulariovalido] = useState(null);
+  const [mostrarCarga, setMostrarCarga] = useState(false);
+  const [RegistroOk, setRegistroOk] = useState(false);
 
-  const expresiones = {
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    password: /^.{4,12}$/, // 4 a 12 digitos.
-    nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
-    telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+  const history = useNavigate(); // Obtiene la instancia de history
+
+  const createCount = () => {
+    createUser(EMAIL.campo, PASSWORD.campo, NOMBRE.campo, APELLIDO.campo, cambiarformulariovalido, setMostrarCarga, (registroOk) => {
+      setRegistroOk(registroOk);
+
+      if (registroOk) {
+        setTimeout(() => {
+          history('/login');
+        }, 3000); 
+      }
+    });
   }
 
   const onChangeTerminos = (e) => {
     cambiarTERMINOS(e.target.checked);
   }
 
-  const history = useNavigate(); // Obtiene la instancia de history
-  const [mostrarCarga, setMostrarCarga] = useState(false);
-
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (EMAIL.valido === 'true' && PASSWORD.valido === 'true' && NOMBRE.valido === 'true' && APELLIDO.valido === 'true' && TELEFONO.valido === 'true' && terminos) {
-      cambiarformulariovalido(true);
       cambiarEMAIL({ campo: '', valido: null });
       cambiarPASSWORD({ campo: '', valido: null });
       cambiarNOMBRE({ campo: '', valido: null });
@@ -51,17 +59,8 @@ export const Registro = () => {
 
       // Mostrar animación de carga
 
-      setTimeout(() => {
-        setMostrarCarga(true);
-      }, 1000)
+      createCount();
 
-
-      // Esperar durante un tiempo antes de redirigir
-      setTimeout(() => {
-        // Ocultar la animación de carga y redirigir
-        setMostrarCarga(false);
-        history('/login');
-      }, 3000); // Cambia el valor según el tiempo de retraso deseado
 
     } else {
       cambiarformulariovalido(false);
@@ -149,9 +148,11 @@ export const Registro = () => {
               <b className='ml-2'>Error:</b> Porfavor rellene los campos correctamente.
             </p>
           </div>}
+
           <div className='flex items-center flex-col font-darker-grotesque mt-2'>
             <input type="submit" value="CREAR CUENTA" className='py-1  w-[290%] cursor-pointer border-[1px] border-black bg-gray-200 hover:bg-gray-300 font-semibold text-sm ' />
           </div>
+
           {formulariovalido && <p className='text-[13px] text-green-600 '>Su cuenta se ha creado correctamente!</p>}
         </div>
       </div>

@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
         try {
             const parsedData = JSON.parse(userLoginData);
             initialAccessToken = parsedData.accessToken || '';
-            initialRefreshToken = parsedData.password || '';
+            initialRefreshToken = parsedData.refreshToken || '';
             initialAuthenticated = parsedData.auth || ('');
 
         } catch (error) {
@@ -114,7 +114,10 @@ export function AuthProvider({ children }) {
             isAuthenticated,
             logout,
             user,
-            login
+            login,
+            getInfoUser,
+            accessToken,
+            refreshToken
         }}
         >
             {children}

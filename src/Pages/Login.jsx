@@ -56,15 +56,11 @@ export const Login = () => {
 
   }, []);
 
-  useEffect(() => {
-    console.log("login api error " + errorLogin);
-  }, [errorLogin]); // Esto se ejecutará cada vez que showError cambie
 
   const submitInfo = (e) => {
     e.preventDefault();
 
     if (!userEmail || !userPassword) {
-      console.log("error")
       setErrorLogin(false)
       setErrorText(true)
 
@@ -85,7 +81,9 @@ export const Login = () => {
   return (
     <div className='flex justify-center items-center h-screen'>
       <div className='h-auto w-[400px] bg-white rounded-2xl relative'>
-        <img src="src/assets/imagenes/Logo-dev.png" alt="" className="w-45 h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <Link to='/'>
+          <img src="src/assets/imagenes/Logo-dev.png" alt="" className="w-45 h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        </Link>
 
         <form className='h-full flex flex-col pt-6 items-center'>
 
