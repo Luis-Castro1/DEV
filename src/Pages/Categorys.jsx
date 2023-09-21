@@ -5,9 +5,22 @@ import { Recomendation } from '../componentes/Recomendation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 import { NavBar } from '../componentes/NavBar'
+import {CategoriaClient} from "../client/CategoriaClient";
+import { useEffect,useState } from 'react'
 
-export const Categorys = ({ listCategorys}) => {
-
+export const Categorys = ({gender}) => {
+  const setGender = gender
+  const [categories, setCategories] = useState({ data: [] })
+  const FindByType = async() => {
+    const categoriasObtenidas = await CategoriaClient(setGender);
+    console.log("Categorias obtenidas:", categoriasObtenidas);
+    setCategories(categoriasObtenidas)
+  }
+  useEffect(
+    ()=> {
+      FindByType();
+    },[]);
+   
   return (
     <>
       <NavBar />
@@ -18,17 +31,17 @@ export const Categorys = ({ listCategorys}) => {
       </div>
 
       <div className="max-w-[1980px] justify-center flex flex-wrap text-white mb-10  gap-y-[1rem]">
-        {listCategorys.map((listCategorys) => (
-          <Link key={listCategorys.id} to={`${listCategorys.fatherPath}${listCategorys.path}`} className="cursor-pointer">
+        {categories.data.map((listCategorys) => (
+          <Link key={listCategorys.id} to={`${listCategorys.fatherpath}${listCategorys.ruta}`} state={listCategorys.id } className="cursor-pointer">
 
-            <h3 className="sm:hidden my-5 font-darker-grotesque text-[23px] font-[500] no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listCategorys.name}</h3>
+            <h3 className="sm:hidden my-5 font-darker-grotesque text-[23px] font-[500] no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listCategorys.nombre}</h3>
 
             <div className="flex justify-center overflow-hidden ">
-              <img className=" ms-0  hover:scale-105 sm:hover:scale-125 transition-all duration-500 rounded-[15px] w-[330px] h-[330px] sm:rounded-none sm:w-[330px] sm:h-[330px]  max-w-[100%] max-h-[490px]" src={listCategorys.image}
+              <img className=" ms-0  hover:scale-105 sm:hover:scale-125 transition-all duration-500 rounded-[15px] w-[330px] h-[330px] sm:rounded-none sm:w-[330px] sm:h-[330px]  max-w-[100%] max-h-[490px]" src={listCategorys.imagen}
                 alt={listCategorys.alt} />
             </div>
 
-            <h3 className="hidden sm:block font-darker-grotesque text-[23px] font-[500] no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listCategorys.name}</h3>
+            <h3 className="hidden sm:block font-darker-grotesque text-[23px] font-[500] no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listCategorys.nombre}</h3>
           </Link>
         ))}
       </div>

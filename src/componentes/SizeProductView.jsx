@@ -1,9 +1,20 @@
 
 import { AddCartProductView } from "./AddCartProductView";
 import "./Size.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { Referenciaclient } from '../client/ReferenciaClient';
 
-export function SizeProductView() {
+export function SizeProductView(props) {
+    const idProducto = props.id;
+    const [references, setReferences] = useState({ data: [] })
+    const FindByProducto = async() => {
+      const ReferenciasObtenidas = await Referenciaclient(idProducto);
+      setReferences(ReferenciasObtenidas)
+    }
+    useEffect(
+      ()=> {
+        FindByProducto();
+      },[]);
     const [selectedSize, setSelectedSize] = useState('');
 
     const handleSizeChange = (event) => {
@@ -14,39 +25,24 @@ export function SizeProductView() {
 
     return (
         <div className="w-[100%]">
-
-           
-
             <div className="product-option__values py-[10px] flex sm:justify-center">
-                <label className=" ">
-                    <input type="radio" className="size" value="xs" checked={selectedSize === 'xs'} onChange={handleSizeChange} />
-                    <span className="">XS</span>
+            {references.data.map((reference) => (
+                <label key={reference.id} className=" ">
+                    <input 
+                    type="radio" 
+                    className="size" 
+                    value={reference.id} 
+                    checked={selectedSize === reference.id} 
+                    onChange={handleSizeChange} />
+                    <span className="">{reference.talla}</span>
                 </label>
-
-                <label className=""  >
-                    <input type="radio" className="size" value="s" checked={selectedSize === 's'} onChange={handleSizeChange} />
-                    <span>S</span>
-                </label>
-
-                <label className="">
-                    <input type="radio" className="size" value="m" checked={selectedSize === 'm'} onChange={handleSizeChange} />
-                    <span>M</span>
-                </label>
-
-                <label className="" >
-                    <input type="radio" className="size" value="l" checked={selectedSize === 'l'} onChange={handleSizeChange} />
-                    <span>L</span>
-                </label>
-
-                <label className="" >
-                    <input type="radio" className="size" value="xl" checked={selectedSize === 'xl'} onChange={handleSizeChange} />
-                    <span>XL</span>
-                </label>
-
+                ))}
             </div>
 
 
-            <AddCartProductView  selectedSize={selectedSize} />
+            <AddCartProductView  
+            selectedSize={selectedSize} 
+            />
 
         </div>
     )

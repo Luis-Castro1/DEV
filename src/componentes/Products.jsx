@@ -20,23 +20,22 @@ export const Products = ({ products }) => {
       <div className='sm:grid flex flex-wrap  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-5'>
 
         {products.slice(0, 12).map(product => {
-
+            console.log("ProductosEnviados a Products.jsx:" + product)
           return (
-
             <div key={product.id} className='group max-w-[370px] mx-auto'>
               <div className=" bg-white  shadow-sm shadow-slate-950 relative overflow-hidden rounded-[20px] cursor-pointer font-darker-grotesque font-medium py-[1px] mx-2 my-5 grid justify-center gap-y-1">
 
 
                 <button onClick={() => handleClick(product)}>
                   <div className="flex justify-center overflow-hidden bg-white">
-                    <img className='w-[370px] h-[370px]   hover:scale-125 transition-all duration-300 ' src={product.img} alt="" />
+                    <img className='w-[370px] h-[370px]   hover:scale-125 transition-all duration-300 ' src={product.imagen} alt="" />
                   </div>
 
 
                   <div className={` items-center text-white flex justify-between absolute inset-0 top-[325px] h-[3rem] bg-black/80  px-[2px] `}>
-                    <strong>{product.name}</strong>
+                    <strong>{product.nombre}</strong>
 
-                    <h3>{`$${product.price}`}</h3>
+                    <h3>{`$${product.precio}`}</h3>
                   </div>
 
                 </button>

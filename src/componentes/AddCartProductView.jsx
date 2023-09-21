@@ -2,9 +2,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from '../hooks/useCart'
 import { ProductPreviewContext } from "../context/ProductPreviewContext";
-import { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { Carritoclient } from '../client/CarritoClient';
 
 export function AddCartProductView({ selectedSize }) {
+    const userId = 1;
+    const quantity= 1 
+    const [carrito, setCarrito] = useState({ data: [] })
+    const AddToShopingcar = async() => {
+    const Added = await Carritoclient(selectedSize, userId,quantity);
+    setCarrito(Added)
+    console.log("Se enviaron los datos el carrito: " +  carrito)
+}
+useEffect(
+  ()=> {
+    AddToShopingcar();
+  },[]);
     const { addToCart, cart } = useCart();
 
     const { productPreview } = useContext(ProductPreviewContext);
@@ -16,7 +29,7 @@ export function AddCartProductView({ selectedSize }) {
     const product = productPreview; // Aquí debes obtener el producto según su ID
 
     const handleAddToCart = () => {
-        if (selectedSize !== "") {
+    if (selectedSize !== "") {
             addToCart(product);
             console.log("Agregado al carrito:", selectedSize);
             // Si se agrega correctamente, oculta el mensaje de error

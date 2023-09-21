@@ -1,28 +1,24 @@
-import { products as initialProducts } from '../data/products.json'
+
 import { HeaderFilters } from './HeaderFilters';
 import { Products } from './Products'
-import { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
+import { Productoclient } from '../client/ProductoClient';
 
-function useFilters(setGender) {
-    const genero = setGender
-
-    const { categoria } = useParams();
-    console.log(categoria);
+function useFilters(categoria) {
 
     const [filters, setFilters] = useState({
-        genero: genero,
-        category: categoria,
+        id_categoria: categoria,
         minPrice: 0
     });
 
     const filterProducts = (products) => {
         return products.filter(product => {
             return (
-                product.price >= filters.minPrice && product.gender === filters.genero &&
+                product.precio >= filters.minPrice && product.id_categoria === filters.id_categoria &&
                 (
-                    filters.category === 'all' ||
-                    product.category === filters.category
+                    filters.id_categoria === 'all' ||
+                    product.id_categoria === filters.id_categoria
                 )
             )
         })
@@ -33,29 +29,29 @@ function useFilters(setGender) {
     
 }
 
-export function ProductList({gender}) {
-    
-    const setGender = gender
-    console.log(setGender)
-    
+export function ProductList() {
+    const location = useLocation();
+    const idCategoria = location.state;
+    const [products, setProducts] = useState({ data: [] })
+    const FindByCategoria = async() => {
+      const ProdutosObtenidos = await Productoclient(idCategoria);
+      console.log("productos obtenidos:", ProdutosObtenidos);
+      setProducts(ProdutosObtenidos)
+    }
+    useEffect(
+      ()=> {
+        FindByCategoria();
+      },[]);
 
-    const [products] = useState(initialProducts)
+    const {filterProducts, setFilters} = useFilters(idCategoria)
 
-    const {filterProducts, setFilters} = useFilters(setGender)
-
-    const filteredProducts = filterProducts(products)
+    const filteredProducts = filterProducts(products.data)
 
     return (
-
         <>
-
-
             <HeaderFilters changeFilters={setFilters} />
             <Products products={filteredProducts} />
-
         </>
-
-
     )
 }
 export default ProductList
