@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom"
 
 
 export const CategoriasNav = () => {
-
+ 
   const categoryLinks = [
+    
     {
       id: 1,
       url: "/Categoria-Hombre",
@@ -16,13 +17,14 @@ export const CategoriasNav = () => {
       name: "MUJER"
     },
 
-    {
+    { 
       id: 3,
       url: "/Categoria-Niño",
       name: "NIÑO"
     },
 
   ]
+
 
   return (
     <nav>

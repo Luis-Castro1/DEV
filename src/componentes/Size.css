@@ -32,9 +32,9 @@ label span {
   
   }
   label input:checked + span {
-    background-color: black; /* Cambia esto al color deseado */
-    color: white; /* Cambia esto al color deseado */
-    font-weight: 600; /* Cambia esto si deseas un peso de fuente diferente */
+    background-color: black;
+    color: white;
+    font-weight: 600;
   }
   
   radio:checked + .radio-label {

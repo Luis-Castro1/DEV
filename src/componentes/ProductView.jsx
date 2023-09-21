@@ -21,7 +21,6 @@ export const ProductView = () => {
 
     // Aquí puedes usar el ID de la URL para obtener el producto correspondiente desde el contexto
     const product = productPreview; // Aquí debes obtener el producto según su ID
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -46,11 +45,6 @@ export const ProductView = () => {
     const [width, setWidth] = useState(0);
     const carousel = useRef();
 
-    useEffect(() => {
-        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-    }, []);
-
-
     return (
         <>
             <NavBar />
@@ -64,13 +58,13 @@ export const ProductView = () => {
                     <div className="space-y-2 hidden overflow-hidden md:flex md:flex-col ">
 
                         <div className="grid grid-cols-2 gap-x-2 w-full">
-                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 w-full h-full" src={productPreview ? product.img : ""} alt="Camiseta sunday" />
-                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 h-full " src={productPreview ? product.img : ""} alt="Camiseta sunday" />
+                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 w-full h-full" src={productPreview ? product.imagen : ""} alt={productPreview ? product.alt : ""} />
+                            <img className="object-cover ease-in-out duration-300  transform hover:scale-105 h-full " src={productPreview ? product.imagen : ""} alt="Camiseta sunday" />
                         </div>
 
                         <div className="grid grid-cols-2 gap-x-2  w-full">
-                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={productPreview ? product.img : ""} alt="Camiseta sunday" />
-                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={productPreview ? product.img : ""} alt="Camiseta sunday" />
+                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={productPreview ? product.imagen : ""} alt="Camiseta sunday" />
+                            <img className="ease-in-out duration-300 h-full w-[100%] object-cover  transform hover:scale-105" src={productPreview ? product.imagen : ""} alt="Camiseta sunday" />
                         </div>
 
                     </div>
@@ -91,20 +85,19 @@ export const ProductView = () => {
 
                     <div className="ml-10  sm:mx-2 font-darker-grotesque  text-2xl"  >
                         <div className="  sm:ml-20 min-w-full">
-                            <h1 className="font-[600] text-4xl  mt-[20px] mb-[10px] ">{productPreview ? product.name : ""}</h1>
-                            <p className="mt-[15px] font-[600] text-black/70">${productPreview ? product.price : ""}</p>
+                            <h1 className="font-[600] text-4xl  mt-[20px] mb-[10px] ">{product.nombre}</h1>
+                            <p className="mt-[15px] font-[600] text-black/70">${product.precio}</p>
                             <div className="bg-black/60 my-2 h-[1.2px] w-[70%] text-black/70"></div>
-                            <p className="mt-[5px]  font-[700]" >Color: hueso</p>
+                            <p className="mt-[5px]  font-[700]" >Color: {product.color}</p>
                         </div>
 
                         <div className="sm:ml-20 text-justify my-3 w-[90%] sm:w-[70%] text-black/80 font-[500] ">
-                            <p className="text-[25px]">Camiseta estampada cuello redondo para hombre de ajuste holgado,jersey suave de algodón 100 % </p>
+                            <p className="text-[25px]">{product.caracteristicas} </p>
                         </div>
 
                         <div className="sm:ml-20 sm:w-[70%] flex-col justify-center">
                         <p className="font-[600] text-[25px] py-[5px]">TALLAS</p>
-                            <SizeProductView />
-                           
+                            <SizeProductView id={product.id}/>                  
                         </div>
 
                     </div >

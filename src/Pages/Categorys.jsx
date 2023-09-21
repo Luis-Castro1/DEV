@@ -32,7 +32,7 @@ export const Categorys = ({gender}) => {
 
       <div className="max-w-[1980px] justify-center flex flex-wrap text-white mb-10  gap-y-[1rem]">
         {categories.data.map((listCategorys) => (
-          <Link key={listCategorys.id} to={`${listCategorys.tipo}${listCategorys.ruta}`} className="cursor-pointer">
+          <Link key={listCategorys.id} to={`${listCategorys.fatherpath}${listCategorys.ruta}`} state={listCategorys.id } className="cursor-pointer">
 
             <h3 className="sm:hidden my-5 font-darker-grotesque text-[23px] font-[500] no-underline text-center text-black mb-1 sm:mt-1 sm:mb-3">{listCategorys.nombre}</h3>
 
