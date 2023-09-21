@@ -57,14 +57,20 @@ export const Footer = () => {
                         <h3 className='text-[18px] my-2 text-center text-black/90 font-[600] sm:text-[15px]'>Redes</h3>
 
                         <div className='flex justify-center sm:justify-between gap-[50px] text-[25px] '>
-                            <a href="">
+                            <a
+                                target={'_blank'}
+                                href="https://twitter.com/DSoft85202">
                                 <FontAwesomeIcon className='hover:text-[#1DA1F2] hover:scale-150 duration-100 cursor-pointer' icon={faTwitter} />
                             </a>
-                            <a href="">
+                            <a
+                                target={'_blank'}
+                                href="https://www.facebook.com/profile.php?id=61551446018804">
                                 <FontAwesomeIcon className='hover:text-[#0078F7] hover:scale-150 duration-100 cursor-pointer' icon={faFacebook} />
                             </a>
 
-                            <a href="">
+                            <a
+                                target={'_blank'}
+                                href="https://www.instagram.com/devsoft.sas">
                                 <FontAwesomeIcon className='hover:text-[#E1306C] hover:scale-150 duration-100 cursor-pointer' icon={faInstagram} />
                             </a>
                         </div>

@@ -2,7 +2,6 @@ import { faEnvelope, faLock, faPhone, faTriangleExclamation, faUser, faX } from 
 import { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthProvider'
 import { useProfileEdit } from "../context/ProfileEdit";
-import { Input } from './InputComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import expresiones from '../hooks/expresiones';
 
@@ -41,8 +40,6 @@ const EditInformationModal = ({ isOpen, onClose }) => {
     const [newPassword, setNewPassword] = useState('');
     const [Oldpassword, setOldPassword] = useState('');
     const [userName, setUserName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [telephone, setTelephone] = useState('');
 
     const [correctForm, setCorrectForm] = useState(null);
     const [correctPass, setCorrectPass] = useState(null);
@@ -51,8 +48,6 @@ const EditInformationModal = ({ isOpen, onClose }) => {
     const [emailError, setEmailError] = useState('');
     const [newPasswordError, setNewPasswordError] = useState('');
     const [userNameError, setUserNameError] = useState('');
-    const [lastNameError, setLastNameError] = useState('');
-    const [telephoneError, setTelephoneError] = useState('');
 
     useEffect(() => {
         getInformation();
@@ -68,16 +63,12 @@ const EditInformationModal = ({ isOpen, onClose }) => {
         }
 
         setNewPassword('')
-        setLastName('')
-        setTelephone('')
         setCorrectForm(null);
         setCorrectPass(null);
 
         setEmailError('');
         setNewPasswordError('');
         setUserNameError('');
-        setLastNameError('');
-        setTelephoneError('');
 
 
     }, [userInfo.email, userInfo.name, onClose]);
@@ -86,7 +77,7 @@ const EditInformationModal = ({ isOpen, onClose }) => {
 
 
     const useFunction = () => {
-        updateInfo(email, newPassword, userName, lastName, setCorrectPass)
+        updateInfo(email, newPassword, userName, setCorrectPass)
 
     }
 
@@ -111,22 +102,11 @@ const EditInformationModal = ({ isOpen, onClose }) => {
         } else {
             setUserNameError(false);
         }
-        if (!expresiones2.apellido.test(lastName)) {
 
-            setLastNameError('Tiene que ser de 4 a 16 dígitos y solo puede contener letras');
-        } else {
-            setLastNameError(false);
-        }
-        if (!expresiones2.telefono.test(telephone)) {
 
-            setTelephoneError('Solo puede contener numeros y el maximo son 14 dígitos');
-        } else {
-            setTelephoneError(false);
-        }
+        if (!emailError || !newPasswordError || !userNameError) {
 
-        if (!emailError || !newPasswordError || !userNameError || !lastNameError || !telephoneError) {
-
-            if (email === '' || userName === '' || lastName === '' || newPassword === '' || telephone === '') {
+            if (email === '' || userName === '' || newPassword === '') {
 
                 setCorrectForm(false);
                 setConfirmedInput(false)
@@ -257,22 +237,6 @@ const EditInformationModal = ({ isOpen, onClose }) => {
 
                                 <label htmlFor="Nombre" className={`absolute left-1 text-gray-400 text-[13px] pointer-events -none transition-transform duration-500 -translate-y-5`}>Nombre</label>
                                 {userNameError && <p className="absolute left[35px] font-sans text-[15px] mb-0 text-red-500">{userNameError}</p>}
-                            </div>
-
-                            <div className='mt-[20px] pb-0 relative font-sans left-[-10px]'>
-                                <FontAwesomeIcon icon={faUser} className='absolute left-[-20px] leading-[30px]' />
-                                <input name='Apellido' type='text' value={lastName} onChange={(e) => setLastName(e.target.value)} className='w-[400px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer' />
-
-                                <label htmlFor="Apellido" className={`absolute left-1 text-gray-400 text-[13px] pointer-events -none transition-transform duration-500 -translate-y-5`}>Apellido</label>
-                                {lastNameError && <p className="absolute left[35px] font-sans text-[15px] mb-0 text-red-500">{lastNameError}</p>}
-                            </div>
-
-                            <div className='mt-[20px] pb-0 relative font-sans left-[-10px]'>
-                                <FontAwesomeIcon icon={faPhone} className='absolute left-[-20px] leading-[30px]' />
-                                <input name='Telefono' type='text' value={telephone} onChange={(e) => setTelephone(e.target.value)} className='w-[400px] focus:outline-none border-b-[2px] text-base focus:border-gray-500 transition-colors peer' />
-
-                                <label htmlFor="Telefono" className={`absolute left-1 text-gray-400 text-[13px] pointer-events-none transition-transform duration-500 -translate-y-5`}>Teléfono</label>
-                                {telephoneError && <p className="absolute lef-[35px] font-sans text-[15px] mb-0 text-red-500">{telephoneError}</p>}
                             </div>
 
 

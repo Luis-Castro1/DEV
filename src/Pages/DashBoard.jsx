@@ -130,31 +130,14 @@ export const DashBoard = () => {
                 <p>{user.name}</p>
               </div>
 
-              <div className="space-y-2">
-                <p className="font-darker-grotesque font-[800] text-[20px]">Apellido</p>
-                <p></p>
+              <div className="w-full flex-col space-y-2">
+                <p className="font-darker-grotesque font-[800] text-[20px]">Correo</p>
+                <p>{user.email}</p>
               </div>
+
 
             </div>
 
-            <div className="w-full flex-col space-y-2">
-              <p className="font-darker-grotesque font-[800] text-[20px]">Correo</p>
-              <p>{user.email}</p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-y-8 ">
-
-              <div className="space-y-2">
-                <p className="font-darker-grotesque font-[800] text-[20px]">Telefono</p>
-                <p>000000</p>
-              </div>
-
-              <div className="space-y-2">
-                <p className="font-darker-grotesque font-[800] text-[20px]">N. Documento</p>
-                <p>145454</p>
-              </div>
-
-            </div>
 
             <div className="w-full flex justify-end">
               <button className="w-full h-full bg-black text-white rounded-md"

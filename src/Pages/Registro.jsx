@@ -22,8 +22,6 @@ export const Registro = () => {
   const [EMAIL, cambiarEMAIL] = useState({ campo: '', valido: null });
   const [PASSWORD, cambiarPASSWORD] = useState({ campo: '', valido: null });
   const [NOMBRE, cambiarNOMBRE] = useState({ campo: '', valido: null });
-  const [APELLIDO, cambiarAPELLIDO] = useState({ campo: '', valido: null });
-  const [TELEFONO, cambiarTELEFONO] = useState({ campo: '', valido: null });
   const [terminos, cambiarTERMINOS] = useState(false);
   const [formulariovalido, cambiarformulariovalido] = useState(null);
   const [mostrarCarga, setMostrarCarga] = useState(false);
@@ -32,7 +30,7 @@ export const Registro = () => {
   const history = useNavigate(); // Obtiene la instancia de history
 
   const createCount = () => {
-    createUser(EMAIL.campo, PASSWORD.campo, NOMBRE.campo, APELLIDO.campo, cambiarformulariovalido, setMostrarCarga, (registroOk) => {
+    createUser(EMAIL.campo, PASSWORD.campo, NOMBRE.campo, cambiarformulariovalido, setMostrarCarga, (registroOk) => {
       setRegistroOk(registroOk);
 
       if (registroOk) {
@@ -50,17 +48,11 @@ export const Registro = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (EMAIL.valido === 'true' && PASSWORD.valido === 'true' && NOMBRE.valido === 'true' && APELLIDO.valido === 'true' && TELEFONO.valido === 'true' && terminos) {
+    if (EMAIL.valido === 'true' && PASSWORD.valido === 'true' && NOMBRE.valido === 'true' && terminos) {
       cambiarEMAIL({ campo: '', valido: null });
       cambiarPASSWORD({ campo: '', valido: null });
       cambiarNOMBRE({ campo: '', valido: null });
-      cambiarAPELLIDO({ campo: '', valido: null });
-      cambiarTELEFONO({ campo: '', valido: null });
-
-      // Mostrar animación de carga
-
       createCount();
-
 
     } else {
       cambiarformulariovalido(false);
@@ -75,7 +67,7 @@ export const Registro = () => {
         <LoadingAnimation />
       )}
 
-      <div className='h-[580px] w-[400px] bg-white rounded-2xl relative'>
+      <div className=' w-[400px] bg-white rounded-2xl relative'>
         <Link to={"/"}>
           <img src="src/assets/imagenes/Logo-dev.png" alt="" className=" h-12 mx-auto absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
         </Link>
@@ -113,30 +105,7 @@ export const Registro = () => {
             expresionRegular={expresiones.nombre}
           />
 
-          <Input
-            estado={APELLIDO}
-            cambiarEstado={cambiarAPELLIDO}
-            tipo="text"
-            icono={faUser}
-            label="APELLIDO"
-            name="apellido"
-            leyendaError="Tiene que ser de 4 a 16 dígitos y solo puede contener letras"
-            expresionRegular={expresiones.apellido}
-          />
-          <Input
-            estado={TELEFONO}
-            cambiarEstado={cambiarTELEFONO}
-            tipo="text"
-            icono={faPhone}
-            label="TELEFONO"
-            name="telefono"
-            leyendaError="Solo puede contener numeros y el maximo son 14 dígitos "
-            expresionRegular={expresiones.telefono}
-          />
-
-
-
-
+        
           <div className='mt-6 mb-2 relative font-darker-grotesque text-[16px] right-8'>
             <input type="checkbox" className='cursor-pointer' checked={terminos} onChange={onChangeTerminos} />   He leido y acepto las <a href="./Politica y Privacidad Dev-Soft.pdf" target="_blank"><b>politicas de privacidad</b></a>
           </div>

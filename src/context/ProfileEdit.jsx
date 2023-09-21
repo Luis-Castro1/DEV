@@ -35,7 +35,7 @@ export function ProfileEdit({ children }) {
     const [userId, setUserId] = useState();
 
 
-    const updateInfo = async (newEmail, newPassword, newName, newLastName, passState) => {
+    const updateInfo = async (newEmail, newPassword, newName, passState) => {
 
         try {
 
@@ -44,7 +44,7 @@ export function ProfileEdit({ children }) {
 
                 email: newEmail,
                 password: newPassword,
-                name: newName + ' ' + newLastName,
+                name: newName,
                 role: 'customer',
                 avatar: "https://picsum.photos/640/640?r=3170",
 
@@ -59,7 +59,7 @@ export function ProfileEdit({ children }) {
         }
     }
 
-    const createUser = async (userEmail, userPassword, userName, userLastname, stateError, stateLoad, stateOk) => {
+    const createUser = async (userEmail, userPassword, userName, stateError, stateLoad, stateOk) => {
         try {
             stateLoad(true); // Indica que la carga está en progreso
 
@@ -67,7 +67,7 @@ export function ProfileEdit({ children }) {
                 {
                     email: userEmail,
                     password: userPassword,
-                    name: userName + ' ' + userLastname,
+                    name: userName,
                     role: 'customer',
                     avatar: "https://picsum.photos/640/640?r=3170",
                 }).then((response) => {
@@ -90,12 +90,6 @@ export function ProfileEdit({ children }) {
             stateError(true);
         }
     };
-
-
-
-
-
-
 
 
 

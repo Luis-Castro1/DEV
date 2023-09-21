@@ -87,7 +87,7 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
 
                     <div key={sliderimg.id} className="rounded-[15px] h-full  min-w-full overflow-hidden z-10 relative">
 
-                        <Link to="/login" className="w-full h-5/6 md:h-11/12 pointer-events-none md:pointer-events-auto" >
+                        <Link to="/" className="w-full h-5/6 md:h-11/12 pointer-events-none md:pointer-events-auto" >
                             <img className="align-top h-full w-full object-cover relative " src={sliderimg.url} alt="" />
 
                             <button className="absolute md:hidden z-40 bg-blue-600 text-white text-[19px]
@@ -96,11 +96,6 @@ export const Slider = ({ velocidad = '500', intervalo = '5000', }) => {
 
                         </Link>
 
-                        <div className=" h-1/6 md:h-[5%] bg-black/95 text-white relative sm:absolute 
-                        w-full py-[10px] px-[60px] bottom-[4rem] sm:bottom-0 text-center text-[14px] sm:text-base">
-
-                            <p>{sliderimg.p}</p>
-                        </div>
 
                     </div>
                 ))};
